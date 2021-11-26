@@ -1,0 +1,201 @@
+\documentclass{article}
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
+\title{Tworzenie projektu Open Source (Creating an Open Source project)}
+\author{Mateusz Tylka}
+\date{22 Listopada, 2021r}
+
+\begin{document}
+
+\maketitle
+\newpage
+\newpage
+\tableofcontents
+\newpage
+
+\section{Wstęp}
+
+\hspace{4mm} W naszym życiu codziennym napotykamy przeróżne systemy informatyczne. Korzystamy z nich posługując się urządzeniami cyfrowymi takimi jak komputer czy telefon komórkowy. Są to podstawowe narzędzia naszych czasów, bez których osoby fizyczne oraz firmy nie mogłyby prawidłowo funkcjonować.
+
+Posługując się współczesnymi komputerami wykorzystujemy również odpowiednie oprogramowania\footnote{\, Wymiennie będę stosował terminy: \emph{oprogramowanie, system informatyczny, program, program komputerowy, program informatyczny, aplikacja}} (ang. \emph{software}). Termin software oznacza zbiór instrukcji, które kierują pracą komputera w celu wykonania określonej czynności\cite{Kotula}. Wspomniany zbiór instrukcji jest zapisany w postaci kodu źródłowego (ang. \emph{source code}), który jest sporządzany przez programistów posługując się językami programowania. Można następująco zdefiniować: „\emph{kod źródłowy} (również \emph{źródło} lub \emph{źródła}) – program komputerowy w postaci takiej, jaką tworzy ją człowiek w pewnym języku programowania, zazwyczaj jako tekst, ale też jako dane dla translatora, przeznaczony do analizowania i modyfikacji przez człowieka. Kod źródłowy jest przetwarzany przez translator na kod maszynowy zrozumiały dla maszyny (procesora) lub jest analizowany i  wykonywany przez specjalny program zwany interpreterem, może być też przetworzony na kod pośredni”\cite{Kotula}. Ujmując to prościej: kod źródłowy można porównać do przepisu na potrawę kulinarną, gdzie tą potrawą w naszym przypadku jest program komputerowy. Posiadając przepis na daną potrawę, jesteśmy w stanie go modyfikować według naszych potrzeb, tworząc tym samym nowe dania. Czy jest również tak w przypadku programów informatycznych? 
+
+Na początku, w latach 60. oraz 70. XX wieku pisanie oprogramowania było domeną małej grupy naukowców, którzy rozpowszechniali i udostępniali kod źródłowy w kręgach zainteresowanych osób. Tajniki tego zagadnienia były zatem dostępne, jednak pojawiła się chęć uznania własności oraz uzyskania zarobku. W tym samym czasie w branży komputerowej zaczęto zaprzestawać dostarczania kodu źródłowego wraz z oprogramowaniem, co miało zapewnić firmom wzrost zysków poprzez rozdzielną sprzedaż tych komponentów. W latach 60 rozpoczęto rejestrowanie programów komputerowych w urzędzie ochrony praw autorskich\cite{Kotula}. Na początku lat 70 programiści stopniowo zaczęli zarabiać pieniądze na podstawie własnych programów komputerowych, których kod źródłowy traktowali jako pilnie strzeżoną tajemnicę\cite{Richter}. Tak narodziło się oprogramowanie komercyjne, które rozpoczęło swoją intensywną ekspansję w latach 80\cite{Kotula}. \newpage
+
+Pomimo komercjalizacji systemów informatycznych, były takie osoby jak Richard Matthew Stallman, których poglądy nie godziły się z koniecznością tworzenia oprogramowania zamkniętego (ang. \emph{closed source} - dostępnego w postaci kodu wykonywalnego). Zdanie Stallmana zostało ukształtowane przede wszystkim przez codzienną rzeczywistość pracy za pomocą urządzeń takich jak drukarka, której oprogramowanie było licencjonowane tak, że nie można było go przeprogramować, dostosowując do własnych potrzeb. „Konsument, nabywając jakiś produkt – taki jak drukarka laserowa – powinien mieć możliwość wykorzystania go w dowolny sposób”\cite{Kotula}. Stanowisko takich ludzi jak Stallman oraz wciąż pojawiająca się potrzeba na istnienie oprogramowania z dostępnym kodem źródłowym, doprowadziło do ukształtowania technologii określanych terminem \emph{open source}\footnote{\, Wymiennie będę stosował terminy: \emph{open source}, \emph{open source software}, \emph{oprogramowanie open source} oraz akronimy OS, OSS.}. Początkowo przyjmowane w sposób niejednoznaczny, dziś zyskują coraz większą popularność i są coraz szerzej wykorzystywane\cite{Kotula}. 
+
+Niniejsza praca poświęcona jest projektom oraz aspektom związanych z open source. Praca składa się ze wstępu, bibliografii i trzech zasadniczych części. W pierwszym rozdziale zdefiniuję termin \emph{open source} oraz pojęcia z nim związane, wymienię i opiszę kluczowe rodzaje licencji oraz porównam oprogramowanie open source z oprogramowaniem komercyjnym przywołując ich wady i zalety. Następnie zwrócę uwagę na różne przypadki oraz odmiany projektów open source w kontekście otwartości, wolności czy też kosztów użytkowania. W ostatniej części pracy opowiem o tworzeniu aplikacji open source na podstawie projektu inżynierskiego \emph{Wmi Adventure}. Uzasadnię skąd wybór tego rodzaju licencji, jakie należy załączyć pliki, oraz jaką dokumentację sporządzić do repozytorium projektowego. Wreszcie przedstawie ideę open source w znaczeniu społecznym odwołując się do naszego projektu inżynierskiego.
+
+\newpage
+\section{Definicja open source}
+
+\hspace{4mm} W 1997 roku utworzony został i wprowadzony termin \emph{open source}. Twórcami tej koncepcji była pewna grupa osób, m.in. Eric S. Raymond, Tim O'Reilly i Bruce Perens. Ważnym elementem powstania tej idei był esej Reymonda pt. \emph{The cathedra and the bazaar} (pol. \emph{Katedra i bazar}), gdzie poruszył kwestię stylu rozwoju oprogramowania jaki prowadził Linus Torvarlds wraz z projektem systemu operacyjnego Linux. Reymond porównał ten proces do formy "hałaśliwego bazaru", gdzie wszyscy od samego początku projektu wprowadzali modyfikacje i proponowali własne rozwiązania\cite{Kotula}.  
+
+
+W 1998 roku Eric Raymond i Bruce Perens powołali organizację non profit - Open Source Initiative (skrót OSI)\cite{Kotula}. OSI nadzoruje standard open source (The Open Source Definiction, OSD), który jest używany do tego, aby jednoznacznie określać, czy dane oprogramowanie jest oprogramowaniem open source. OSI certyfikuje także licencje (OSI Certified), aby potwierdzić, że dana
+licencja spełnia postulaty OSD\cite{opensource.org}. Pojęcie \emph{open source} jest zdefiniowane następującymi postulatami\cite{Kotula}:
+
+\begin{enumerate}
+    \item \textbf{Wolna redystrybucja (ang. \emph{free redistribution}).}
+    
+    \hspace{4mm} Brak zakazu sprzedawania lub rozdawania programu jako elementu większej całości, ani wymagania przekazywania określonych opłat ze sprzedaży. Można zatem wziąć kod źródłowy i wykorzystać go jako część większej aplikacji, którą można sprzedać lub przekazać za darmo. Natomiast nie posiada się obowiązku, aby płacić komuś, kto wcześniej stworzył wykorzystany fragment kodu lub cały kod źródłowy.
+    
+    \item \textbf{Kod źródłowy (ang. \emph{source code}).}
+    
+    \hspace{4mm} Takie oprogramowanie musi zawierać kod źródłowy, który jest rozpowszechniany zarówno w swojej pierwotnej postaci jak i w postaci skompilowanej (program gotowy do pracy). Kod źródłowy musi być dodatkowo dostępny w najprostrzej postaci, aby była możliwość łatwego dokonywania w nim modyfikacji. Nie można celowo komplikować kodu źródłowego.
+    
+    \item \textbf{Dzieła pochodne (ang. \emph{derived works}).}
+    
+    \hspace{4mm} Licencja zgodna ze standardem OSD musi zapewniać możliwość tworzenia modyfikacji programu i programów na bazie programu pierwotnego. Co więcej zarówno modyfikacje, jak i kolejne wersje programu, muszą być dostępne na zasadach takiej samej licencji. \newpage
+    
+    \item \textbf{Spójność kodu źródłowego autora (ang. \emph{integrity of the author’s source code}).}
+    
+    \hspace{4mm} Licencja ma prawo zabraniać rozpowszechniania kodu źródłowego programu w zmodyfikowanej jego wersji tylko wtedy, gdy dozwolona jest dystrybucja poprawek do programu (ang. \emph{patch}) wraz z kodem źródłowym w celu ulepszania tego oprogramowania. Może też nakazywać, aby utwory pochodne posiadały inną nazwą oraz inny numer wersji niż program pierwotny. Dozwolony jest więc taki program, którego kod jest dostępny i dostępne są oddzielne poprawki, czyli \emph{patche}. Ten zapis zapewnia, że oryginalne prace pozostaną niezależnymi produktami.
+    
+    \item \textbf{Bez dyskryminacji osób i grup (ang. \emph{no discrimination against persons or groups}).}
+    
+    \hspace{4mm} Licencja nie może dyskryminować żadnych osób lub grup społecznych.
+    
+    \item \textbf{Bez dyskryminacji obszarów zastosowań (ang. \emph{no discrimination against fields of endeavor}).}
+    
+    \hspace{4mm} Oprogramowanie nie może być ograniczane co do wykorzystywania w dowolnym obszarze.
+    
+    \item \textbf{Dystrybucja licencji (ang. \emph{distribution of license}).}
+    
+    \hspace{4mm} Licencja nałożona na program jest jedynym przepisem prawnym, który obowiązuje taką aplikację. Na mocy tego zapisu następnym pokoleniom nakazuje się egzekwowanie tego prawa. Innymi słowy dany program OS lub fragment kodu pozostaje na tej samej licencji w kolejnych wersjach i modyfikacjach.
+    
+    \item \textbf{Licencja nie może być przeznaczona dla konkretnego produktu (ang. \emph{license must not be specific to a product}).}
+    
+    \hspace{4mm} Wszystkie części danego programu open source muszą być udostępnione na prawach tej samej licencji. Punkt ten zapobiega opcji wyizolowania z danego OSS fragmentu kodu i publikacji go na innej licencji niż ta, która była przypisana danemu OSS.
+    
+    \item \textbf{Licencja nie może ograniczać innego oprogramowania (ang. \emph{license must not restrict other software}).}
+    
+    \hspace{4mm} Licencja nie może narzucać konieczności stosowania tych samych praw wobec systemu informatycznego, które dystrybuowane jest wraz z OSS. Innymi słowy, nie może nakazywać, aby, na przykład, rozpowszechniając dany program OSS na danym urządzeniu, wszystkie inne aplikacje umieszczone na tym samym nośniku były również udostępniane na tej samej licencji. Zapis ten umożliwia wraz z oprogramowaniem komercyjnym swobodnie rozpowszechniać oprogramowanie open source.\newpage
+    
+    \item \textbf{Licencja musi być neutralna technologicznie (ang. \emph{license must be technology-neutral}).}
+    
+    \hspace{4mm} Zapis ten powstał po to, aby pozwolić przenosić kod programu na inne nośniki, na przykład do postaci papierowej.
+\end{enumerate}
+
+Najprościej rzecz ujmując, idea open source polega na prowadzeniu oprogramowania, z otwartym kodem źródłowym, który można dowolnie kopiować, modyfikować oraz wykorzystywać do różnych celów. Jednak poszczególne aspekty zależą od danej licencji na mocy której wytwarzane jest oprogramowanie. Bywają bowiem takie licencję, które pozwalają na wykorzystanie kodu, a następnie nie udostępnianie go w swoim stworzonym utworze pochodnym. Omawiając specyficzne przypadki projektów open source będę odwoływał się do przedstawionej powyżej definicji w pozostałych częściach pracy.
+
+\subsection{Rodzaje licencji}
+
+\hspace{4mm} Licencja oprogramowania jest to umowa na korzystanie z utworu, jakim jest program komputerowy, zawierana pomiędzy podmiotem, któremu przysługują prawa autorskie do utworu, a użytkownikiem, który zamierza z danej aplikacji korzystać\cite{wikipedia}.
+
+Systemy informatyczne z otwartym kodem źródłowym posiadają wiele różnorodnych licencji. Potrzebują ich m.in. po to, aby umożliwiać dystrybucje oraz dostęp. Na mocy stosowanych licencji określone sytuacje stają się klarowne. Na przykład jeżeli ktoś korzysta z oprogramowania wolnego\footnote{\, Wolne oprogramowanie (ang. \emph{free software}) termin wprowadzony przez Richarda Matthew Stallmana jeszcze przed pojawieniem się koncepcji open source, który również charakteryzuje się otwartym kodem źródłowym. Dokładniej opiszę do pojęcie w następnym rozdziale pracy.}, modyfikując je ale odrzucając możliwość późniejszej dystrybucji swoich zmian, musi ponieść konsekwencje. Pierwszą taką licencją zaproponowaną przez Richarda Matthew Stallmana, była GNU General Public License (w skrócie GPL, pol. Powszechna Licencja Publiczna)\cite{Kotula}. Licencja GPL zakłada możliwość kopiowania programów, tworzenia utworów zależnych oraz udostępnianie aplikacji pierwotnych oraz pochodnych\cite{wikipedia}.
+
+W kontekście typów licencji istotna jest koncepcja \textbf{\emph{copyleft}}, którą w 1985 roku Richard M. Stallman wprowadził. Celem jej jest aby nowo powstające programy lub kolejne ich wersje były publikowane na tych samych wolnych zasadach. Warto podkreślić, że termin \emph{copyleft}, wprost nawiązuje do licencji typu \emph{copyright}. Copyright jest to formuła określająca kto ma prawo do wydawania lub wykonywania dzieła\cite{sjp}. Stallman wyjaśniał, że pewnego razu znajomy obdarzony wielką wyobraźnią wysłał mu list. Na jego kopercie wypisał kilka zabawnych sentencji, a wśród nich następującą: "Copyleft  – all rights reversed" (Copyleft  – wszystkie prawa odwrócone). Z tego narodziło się pojęcie copyleft, które nawiązywało do terminu copyright na dwa sposoby. W sensie dosłownym: logo copyleft było lustrzanym odbiciem znaku copyright, oraz w sensie metaforyczno-analogowym: niektóre prawa, które zastrzegane są na mocy copyright, na mocy copyleft mogą być łagodzone (są "zdejmowane")\cite{Kotula}.
+
+Przywołując trzeci postulat definicji \emph{open source}: \textbf{dzieła pochodne} dodam, że jest on fundamentalny, gdyż zezwala, choć nie nakazuje na zastosowanie mechanizmu \textbf{\emph{copyleft}} poprzez konkretnie stosowaną licencję. Innymi słowy, w zależności od zastosowanej licencji, program może pozostać otwarty (licencja taka jak GPL) lub zamknięty (licencje typu BSD)\cite{Kotula}. Jak program może pozostać "zamknięty"? Te stwierdzenie wydaje się być sprzeczne z ideą open source. Jednakże aby rozwiać tą wątpliwość podam następującą definicję: "\textbf{Licencje BSD} - jedne z licencji zgodnych z zasadami wolnego oprogramowania. Powstałe początkowo na Uniwersytecie Kalifornijskim w Berkeley. Licencje BSD skupiają się na prawach użytkownika. Są bardzo liberalne, zezwalają nie tylko na modyfikacje kodu źródłowego i jego rozprowadzanie w takiej postaci, ale także na rozprowadzanie produktu bez postaci źródłowej czy włączenia do zamkniętego oprogramowania, pod warunkiem załączenia do produktu informacji o autorach oryginalnego kodu i treści licencji\cite{wikipedia}." Ujmując to prościej: w przypadku licencji BSD, dozwolona jest dystrybucja produktu bez otwierania kodu źródłowego na dalsze zmiany, co zapobiega powstaniu kolejnych podprogramów na bazie tej wersji powstałej na licencji BSD.
+
+Dla lepszego zrozumienia tego zjawiska omówię dwie ogólne kategorie licencji stosowane w przypadku aplikacji OS. W środowisku open source wyróżniamy takie licencje, które nie narzucają żadnych ograniczeń na rozpowszechnianie oprogramowania oraz te, które ograniczenia takie narzucają. W rezultacie wyłoniły się dwa modele licencyjne: free and open source software (FOSS) oraz prioprietary and closed source software (PCSS). Obydwa modele chronią przede wszystkim prawa autorskie do projektu, ale w kilku kwestiach różnią się znacząco. Przede wszystkim celem licencji FOSS jest zdejmowanie większości praw narzucanych etykietą copyright, podczas gdy licencje PCSS trzymają się tych ograniczeń. Co więcej w obszarze FOSS wskazuje się dalej na dwa podstawowe trendy w licencjonowaniu, tj. OS i FS. Idea FS jest bardziej wolnościowa od OS. Kwestią licencji FS głosi się, jak sama nazwa wskazuje (od ang. \emph{free software}), większą swobodę oprogramowania, co wyraża się w nieograniczonym dostępie do kodu źródłowego programu oraz dowolnym wykorzystaniu programu. Wzorowym przykładem tego typu trendu są licencje z grupy GPL. Z kolei licencje OS pozwalają również ograniczać dostęp do kodu źródłowego oraz tworzyć na jego podstawie aplikacje zamknięte\cite{Kotula}. Pokazuje to poniższy schemat (rys. 1).
+\begin{center}
+    \includegraphics[width = 1\textwidth]{typyLicencji.png}
+\end{center}
+
+Na podstawie załączonego schematu (rys. 1), licencje FOSS pozwalają tworzenie zarówno programów o otwartym kodzie źródłowym jak i o ograniczonym dostępie do kodu, podczas gdy licencje PCSS mogą być używane jedynie do tych drugich. Widoczny jest również stosunek licencji BSD oraz GPL do poruszonych typów, co mam nadzieję objaśnia istotę tych konkretnych przypadków.
+
+Przykładem oprogramowania działającego w oparciu o licencje BSD jest chociażby dobrze znana przeglądarka \textbf{Google Chrome}, która jest darmowa, ale nie udostępnia swojego kodu źródłowego. Google Chrome jest projektem, który powstał na podstawie \textbf{Chromium} - oprogramowania open source, które jest bazą dla przeglądarek internetowych\cite{wikipedia}.
+
+Z kolei dobrze znanym przypadkiem wśród programistów systemu informatycznego opartego o licencję rodzaju GPL jest dystrybucja systemu linux \textbf{Debian}, na wzór której można zaproponować własną wersję\cite{Kotula}. Tak na przykład powstało Ubuntu\footnote{\, Następny przykład dystrybucji systemu linux.}. \newpage
+
+\subsection{Porównanie oprogramowania open source z oprogramowaniem komercyjnym}
+
+W tym podrozdziale porównam oprogramowanie open source z aplikacjami komercyjnymi (które są jednocześnie oprogramowaniem własnościowym) na podstawie własnych obserwacji oraz wniosków przedstawionych w książce Sebastiana Dawida Kotuły "Wstęp do Open Source".
+
+\begin{enumerate}
+    \item Pierwszą najbardziej narzucającą kwestią jest to, iż program typu open source posiada otwarty kod. Każdy może zajrzeć co kryje się wewnątrz takiego oprogramowania. Natomiast w informatycznych produktach komercyjnych nie mamy dostępu do kodu źródłowego, lub dostęp do niego jest zasadniczo utrudniony (np. poprzez zaciemnianie kodu (ang. \emph{obfuscation}\footnote{\, Zaciemnienie kodu polega na jego przekształceniu tak, aby innym trudno było odtworzyć pierwotną strukturę składniową aplikacji\cite{Kotula}}). Programy komercyjne są jak samochody, w których nie możemy zajrzeć co kryje się pod maską. Interesuje nas w nich jedynie to, w jaki sposób realizują swoje przeznaczenie.
+    
+    \item Idea open source pozwala nam na kopiowanie kodu, modyfikowanie go, oraz wykorzystywanie w swoich własnych projektach, które mogą być płatne. Z kolei w komercyjnym przypadku kod jest po pierwsze zabezpieczony, a po drugie nawet gdyby dany podmiot zdołałby go uzyskać nie ma on prawa do jego posiadania, publikowania oraz wykorzystywania.
+    
+    \item Programom open source bardziej przyświeca inwencja twórcza, gdyż ich wytwarzanie nie jest uzależnione od finansów oraz wymagań konkretnego klienta. Z drugiej strony aplikacje komercyjne są nastawione przede wszystkim na zarobek.
+    
+    \item Projekty z otwartym kodem źródłowym charakteryzują się szerszym udziałem społeczności niż projekty własnościowe. W dany produkt OS może się zaangażować każdy. Przeciwieństwem jest przypadek programu komercyjnego, który jest rozwijany najczęściej przez konkretną firmę. 
+    
+    \item Kolejnym wątkiem jest kontrola nad danym systemem informatycznym. W sytuacji programistycznego bytu opartego o koncepcje open source mamy pełną kontrolę, gdyż możemy manipulować zarówno funkcjami systemu jak i jego kodem źródłowym. Natomiast ze strony programu komercyjnego jesteśmy ograniczeni przez gotowy produkt, który nie jest tak elastyczny.
+    
+    \item Oprogramowanie komercyjne jest bardziej popularne. Systemy open source są znane w środowisku programistów, jednak nie w środowisku powszechnym. Typowy użytkownik mówiąc o systemie operacyjnym, będzie miał na myśli Windowsa\footnote{Komercyjny system operacyjny stworzony przez firmę Microsoft.}, a raczej nie pomyśli o systemie Linux.
+    
+    \item W sposób komercyjny przeważnie tworzy się duże oprogramowania, zapewniając możliwość wykonywania wielu zadań po to, aby sprostać wymaganiom różnych użytkowników, podczas gdy OSS cechuje się tym, że poszczególne części aplikacji służą określonym zadaniom. Dzięki temu internauci są w stanie wedle własnych potrzeb doinstalowywać konkretne komponenty\cite{Kotula}.
+    
+    \item Przyznać należy, że istota open source działa tak, aby oprogramowanie działało bardzo dobrze i dopiero na takim fundamencie buduje się wizerunek i tworzy odpowiednie opakowanie: w pierwszej kolejności funkcja (treść), następnie pudełko (forma), a kompletnie na końcu marketing. Zdaje się, że w przypadku komercyjnym droga ta przebiega często w odwrotnej kolejności: dobra reklama, forma, logo, opakowanie, a potem treść, którą uzupełnia się do stworzonej lub faktycznej potrzeby\cite{Kotula}.
+    \end{enumerate}
+    
+    Mimo zdecydowanych różnic pomysły i rozwiązania przewijają się pomiędzy programami open source, a oprogramowaniem komercyjnym. Te dwa zróżnicowane podejścia wpływają na siebie nawzajem rozpędzając ogólny rozwój oprogramowania. Poniższy schemat ilustruje ten proces (rys. 2).
+    \begin{center}
+        \includegraphics[width = 1\textwidth]{ruchy.png}
+    \end{center}
+    \hspace{4mm} Oprogramowania OS są wykorzystywane przez programy komercyjne. Z kolei ruch komercyjny wpływa na ruch open source sugerując jakie technologie są najbardziej pożądane. \newpage
+
+\subsection{Zalety i wady oprogramowania open source}
+
+\hspace{4mm} Kończąc ten rozdział wypunktuję wady i zalety oprogramowania open source. \newline
+
+\textbf{Zalety} oprogramowania typu open source:
+
+\begin{itemize}
+    \item W większości przypadków brak opłat za oprogramowanie, licencję oraz wdrożenie. Pozwolę sobie w tym miejscu przytoczyć pewną dygresję dotyczącą szkolnictwa. Możemy tylko sobie wyobrazić ile pieniędzy zostałoby zaoszczędzonych, gdyby w szkołach nie korzystano z systemu operacyjnego Windows i płatnego pakietu Microsoft Office\footnote{\, Komercyjny pakiet oprogramowania biurowego firmy Microsoft.}, tylko z alternatyw open source takich jak na przykład Open Office\footnote{\, Darmowy pakiet oprogramowania biurowego.}. Pomniejszając w ten sposób wydatki, byłaby możliwość chociażby inwestycji w lepszy sprzęt.
+    
+    \item Oprogramowanie dla użytkownika, a nie użytkownik dla oprogramowania. W przypadku programów open source mamy nad nimi pełną kontrolę. Natomiast aplikacje komercyjne w dzisiejszych czasach często mają skłonności do manipulacji użytkownikami. Przykładowo popularny komunikator firmy Facebook - Messenger, sprawia wrażenie skonstruowanego tak, aby konsument poświęcił w nim jak najwięcej czasu kosztem większej praktyczności czy wydajności. Dowodem na to jest fakt, iż przechodząc w aplikacji do konwersacji z danym użytkownikiem lub grupą nie widzimy nowych wiadomości od momentu pierwszej nieprzeczytanej, tylko od ostatnio wysłanej. Z tego powodu, aby przeczytać świeżą treść od początku do końca, najpierw musimy poświęcić chwilę aby przewinąć interfejs do góry, aby następnie czytać od góry do dołu.
+    
+    \item Posiadamy większą możliwość ingerencji w rozwój lub poprawę produktu. W sytuacji komercyjnego projektu, możemy ewentualnie zgłosić błąd do pomocy technicznej, jednakże nie mamy gwarancji, że zostanie on poprawiony. Z kolei w przypadku oprogramowania OS zawsze jest opcja zlecenia jakiemuś programiście aby dostosował aplikację według naszych potrzeb lub sami to zrobić, jeśli posiadamy odpowiednie umiejętności.
+    
+    \item Łatwa dostępność i przydatność przy budowie własnych projektów. Wiele systemów komercyjnych wykorzystuje programistyczne pakiety i biblioteki open source.
+    
+    \item Bardzo mocną stroną open source jest społeczność. "Nie byłoby możliwe, aby mała grupa osób udźwignęła ciężar stworzenia podłoża działającej sieci internetowej\cite{Kotula}." Każdy z zainteresowanych, może wnieść do utworu coś od siebie, dzięki czemu powstanie produkt wysokiej jakości. Jak to się mówi "co dwie głowy to nie jedna", a idea wytwarzania oprogramowania OS przewiduje znacznie więcej tych "głów".
+    
+    \item Obrońcy OSS, np. Brian Fitzgerald, wskazują, że open source jest w stanie rozwiązać problem tzw. kryzysu oprogramowania, który objawia się zwłaszcza w grupie rozmaitych systemów opartych o model komercyjny. Odnotowuje się m.in. takie bolączki, jak to, że ten typ software'u tworzy się bardzo długo, jest przy tym bardzo kosztowny, a gdy zostanie dostarczony odbiorcom, okazuje się że nie działa tak, jak powinien. Z kolei system OSS tworzone są dużo szybciej, taniej, a wszystkie błędy i niedociągnięcia usuwane są w zasadzie natychmiastowo. Stąd zwolennicy nurtu OS stwierdzają, że jest to przyszłościowy model tworzenia programów, który przyczynia się do budowania społeczeństwa informacyjnego\cite{Kotula}.
+    
+    \item Duży wybór aplikacji. Ogromna ilość OSS, różnych wersji, modyfikacji, poprawek itp\cite{Kotula}.
+    
+    \item Wiele różnych licencji pozwala wybrać sobie (lub stworzyć nową) idealnie odpowiadającą indywidualnym potrzebom\cite{Kotula}. 
+\end{itemize}
+
+\textbf{Wady} aplikacji open source:
+
+\begin{itemize}
+    \item Brak ceny oznacza równocześnie dewaluację oprogramowania oraz pracy programisty na zasadzie: "jeśli coś jest za darmo, to jest gorsze". Przeczynia się tu również pogląd, że na oprogramowaniu open source nie można zarobić, przez co wielu użytkowników traci motywację do jego rozwijania\cite{Kotula}.
+    
+    \item Gigantyczny repertuar OSS sprawia, że ciężko jest odnaleźć pożądane aplikacje (wrażenie nadmiaru programów). Może nigdy nie powstać poprawnie funkcjonująca wersja aplikacji\cite{Kotula}.
+    
+    \item Duża ilość licencji może sprawić, że użytkownik nie do końca wie, z jakim rodzajem programu ma styczność\cite{Kotula}.
+    
+    \item Wielka społeczność potrafi być również wadą, gdyż wielość pomysłów potrafi wprowadzić chaos i zamieszanie\cite{Kotula}.
+    
+    \item Nie ma gwarancji, że powstająca aplikacja na warunkach open source będzie poprawnie działać\cite{Kotula}.
+    
+    \item Interfejs często jest mało dopracowany, zwłaszcza w początkowych fazach\cite{Kotula}.
+    
+    \item Osoby tworzące OS są uwikłane w czasochłonne procesy komunikacyjne\cite{Kotula}.
+    
+    \item Dużo mówi się o samej idei otwartości, powstaje coraz więcej aplikacji, lecz wydaje się, że wciąż za mało aplikacji OS się używa. W tej kwestii leżą takie przeszkody jak bariery mentalne: podstawową jest natura ludzka i związane z nią obawy przed nowymi trudnościami w odzwyczajaniu się od dawnych nawyków poprzez korzystanie z innych programów\cite{Kotula}.
+\end{itemize}
+
+\section{Open versus free software}
+
+\newpage
+\begin{thebibliography}{99}
+\bibitem{Kotula}
+    Sebastian Dawid Kotuła,
+    \emph{Wstęp do Open Source}
+\bibitem{Richter}
+  Richter Susanne, \emph{Critique for the open source development model,} München 2007.
+\bibitem{opensource.org}
+  \emph{The open source definition (annotated)} [online], [dostęp: 24.11.2021]. Dostępny w WWW: http://www.opensource.org/osd.html.
+\bibitem{wikipedia}
+  \emph{Wikipedia. Wolna encyklopedia.} [online], [dostęp: 24.11.2021]. Dostępny w WWW: https://pl.wikipedia.org.
+\bibitem{sjp}
+  \emph{sjp.pwn.pl} [online], [dostęp: 25.11.2021] https://sjp.pwn.pl/slowniki/copyright.html
+
+\end{thebibliography}
+\end{document}
