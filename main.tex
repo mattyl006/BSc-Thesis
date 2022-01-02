@@ -33,7 +33,7 @@ Na początku, w latach 60. oraz 70. XX wieku pisanie oprogramowania było domen�
 
 Pomimo komercjalizacji systemów informatycznych, były takie osoby jak Richard Matthew Stallman, których poglądy nie godziły się z koniecznością tworzenia oprogramowania zamkniętego (ang. \emph{closed source} - dostępnego w postaci kodu wykonywalnego). Zdanie Stallmana zostało ukształtowane przede wszystkim przez codzienną rzeczywistość pracy za pomocą urządzeń takich jak drukarka, której oprogramowanie było licencjonowane tak, że nie można było go przeprogramować, dostosowując do własnych potrzeb. „Konsument, nabywając jakiś produkt – taki jak drukarka laserowa – powinien mieć możliwość wykorzystania go w dowolny sposób”\cite{Kotula}. Stanowisko takich ludzi jak Stallman oraz wciąż pojawiająca się potrzeba na istnienie oprogramowania z dostępnym kodem źródłowym, doprowadziło do ukształtowania technologii określanych terminem \emph{open source}\footnote{\, Wymiennie będę stosował terminy: \emph{open source}, \emph{open source software}, \emph{oprogramowanie open source}, \emph{otwarte oprogramowanie} oraz akronimy OS, OSS.}. Początkowo przyjmowane w sposób niejednoznaczny, dziś zyskują coraz większą popularność i są coraz szerzej wykorzystywane\cite{Kotula}. 
 
-Niniejsza praca poświęcona jest projektom oraz aspektom związanych z open source. Praca składa się ze wstępu, bibliografii i trzech zasadniczych części. W pierwszym rozdziale zdefiniuję termin \emph{open source} oraz pojęcia z nim skorelowane, wymienię i opiszę kluczowe rodzaje licencji oraz porównam oprogramowanie otwarte z oprogramowaniem komercyjnym przywołując ich wady i zalety. Następnie wyjaśnię czym jest idea wolnego oprogramowania zwracając uwagę na jej różnice względem ruchu open source. Przeanalizuje również kilka konkretnych przykładów otwartego oprogramowania w kontekście wolności i otwartości. W ostatniej części pracy opowiem o tworzeniu aplikacji open source na podstawie projektu inżynierskiego \emph{Wmi Adventure}. Uzasadnię skąd wybór tego rodzaju licencji, jakie należy załączyć pliki oraz jaką dokumentację sporządzić do repozytorium projektowego. Wreszcie przedstawie ideę open source w znaczeniu społecznym odwołując się do naszego projektu inżynierskiego.
+Niniejsza praca poświęcona jest projektom oraz aspektom związanych z open source. Praca składa się ze wstępu, bibliografii i trzech zasadniczych części. W pierwszym rozdziale zdefiniuję termin \emph{open source} oraz pojęcia z nim skorelowane, wymienię i opiszę kluczowe rodzaje licencji oraz porównam oprogramowanie otwarte z oprogramowaniem komercyjnym przywołując ich wady i zalety. Następnie wyjaśnię czym jest idea wolnego oprogramowania zwracając uwagę na jej różnice względem ruchu open source. Przeanalizuje również kilka konkretnych przykładów otwartego oprogramowania w kontekście wolności i otwartości. W ostatniej części pracy opowiem o tworzeniu aplikacji open source na podstawie projektu inżynierskiego \emph{Wmi Adventure}. Uzasadnię skąd wybór tego rodzaju licencji, jakie należy załączyć pliki oraz jaką dokumentację sporządzić do repozytorium\footnote{\, Miejsce, w których przechowuje się kod źródłowy oprogramowania.} projektowego. Wreszcie przedstawie ideę open source w znaczeniu społecznym odwołując się do naszego projektu inżynierskiego.
 
 \section{Definicja open source}
 
@@ -99,7 +99,7 @@ Przywołując trzeci postulat definicji \emph{open source}: \textbf{dzieła poch
 
 Przykładem licencji, która narzuca stosowanie \textbf{copyleft} jest \textbf{GPL}. Na tej licencji zostało stworzone dzieło Linus'a Torvarlds'a -  \textbf{jądro Linuxa}. Każdy kto zmodyfikuje jądro Linux'a jest zobowiązany zapewnić dystrybucje wprowadzonych przez siebie zmian. Kod źródłowy musi pozostać otwarty i dostępny dla innych, w przeciwnym wypadku podmiot, który naruszy tą zasadę może ponieść konsekwencję prawne.
 
-Z drugiej strony istnieje taka licencja jak \textbf{BSD}, która nie nakazuje stosowania \textbf{copyleft} w dziełach pochodnych. "\textbf{Licencje BSD} - jedne z licencji zgodnych z zasadami wolnego oprogramowania. Powstałe początkowo na Uniwersytecie Kalifornijskim w Berkeley. Licencje BSD skupiają się na prawach użytkownika. Są bardzo liberalne, zezwalają nie tylko na modyfikacje kodu źródłowego i jego rozprowadzanie w takiej postaci, ale także na rozprowadzanie produktu bez postaci źródłowej czy włączenia do zamkniętego oprogramowania, pod warunkiem załączenia do produktu informacji o autorach oryginalnego kodu i treści licencji\cite{wikipedia3}." Ujmując to prościej: w przypadku licencji BSD, dozwolona jest dystrybucja produktu bez otwierania kodu źródłowego na dalsze zmiany, co zapobiega powstaniu kolejnych podprogramów na bazie tej wersji powstałej na licencji BSD.
+Z drugiej strony istnieje taka licencja jak \textbf{BSD}, która nie nakazuje stosowania \textbf{copyleft} w dziełach pochodnych. "\textbf{Licencje BSD} - jedne z licencji zgodnych z zasadami otwartego oprogramowania. Powstałe początkowo na Uniwersytecie Kalifornijskim w Berkeley. Licencje BSD skupiają się na prawach użytkownika. Są bardzo liberalne, zezwalają nie tylko na modyfikacje kodu źródłowego i jego rozprowadzanie w takiej postaci, ale także na rozprowadzanie produktu bez postaci źródłowej czy włączenia do zamkniętego oprogramowania, pod warunkiem załączenia do produktu informacji o autorach oryginalnego kodu i treści licencji\cite{wikipedia3}." Ujmując to prościej: w przypadku licencji BSD, dozwolona jest dystrybucja produktu bez otwierania kodu źródłowego na dalsze zmiany, co zapobiega powstaniu kolejnych podprogramów na bazie tej wersji powstałej na licencji BSD.
 
 Przykładem oprogramowania działającego w oparciu o licencje BSD jest chociażby \textbf{Chromium}, na bazie którego powstała dobrze znana przeglądarka \textbf{Google Chrome}. Google Chrome jest darmowe, jednak nie udostępnia swojego kodu źródłowego. Twórcy tej przeglądarki mają do tego prawo właśnie ze względu na możliwości licencji BSD\cite{wikipedia3}. 
 
@@ -113,7 +113,7 @@ Ta część która była udostępniona na licencji BSD, na niej pozostaje, jedna
 
 \subsection{Porównanie oprogramowania open source z oprogramowaniem komercyjnym}
 
-W tym podrozdziale porównam oprogramowanie open source z aplikacjami komercyjnymi (które są jednocześnie oprogramowaniem własnościowym), rozważania będę prowadził na podstawie własnych obserwacji oraz wniosków przedstawionych w książce Sebastiana Dawida Kotuły "Wstęp do Open Source" \cite{Kotula}.
+W tym podrozdziale porównam oprogramowanie open source z aplikacjami komercyjnymi (które są jednocześnie oprogramowaniem własnościowym), rozważania będę prowadził na podstawie własnych obserwacji oraz wniosków przedstawionych w książce Sebastiana Dawida Kotuły "Wstęp do Open Source"\cite{Kotula}.
 
 \begin{enumerate}
     \item Pierwszą najbardziej narzucającą się kwestią jest to, iż program typu open source posiada otwarty kod. Każdy może zajrzeć co kryje się wewnątrz takiego oprogramowania, natomiast w informatycznych produktach komercyjnych nie mamy dostępu do kodu źródłowego lub jest on zasadniczo utrudniony (np. poprzez zaciemnianie kodu (ang. \emph{obfuscation}\footnote{\, Zaciemnienie kodu polega na jego przekształceniu tak, aby innym trudno było odtworzyć pierwotną strukturę składniową aplikacji\cite{Kotula}}). Programy komercyjne są jak samochody, w których nie możemy zajrzeć co kryje się pod maską. Interesuje nas jedynie to, w jaki sposób realizują zadania, do których są przeznaczone, jednak nie jesteśmy w stanie sprawdzić poziomu oleju w silniku.
@@ -133,7 +133,7 @@ W tym podrozdziale porównam oprogramowanie open source z aplikacjami komercyjny
     \item Przyznać należy, że istota open source działa tak, aby oprogramowanie funkcjonowało bardzo dobrze, dopiero na takim fundamencie buduje się wizerunek i tworzy odpowiednie opakowanie: w pierwszej kolejności funkcja (treść), następnie pudełko (forma), a w końcowej fazie marketing. Zdaje się, że w przypadku komercyjnym droga ta przebiega często w odwrotnej kolejności: dobra reklama, forma, logo, opakowanie, a potem treść, którą uzupełnia się do stworzonej lub faktycznej potrzeby\cite{Kotula}.
     \end{enumerate}
     
-    Mimo zdecydowanych różnic pomysły i rozwiązania przewijają się pomiędzy programami open source, a oprogramowaniem komercyjnym. Te dwa zróżnicowane podejścia wpływają na siebie nawzajem rozpędzając ogólny rozwój oprogramowania. Poniższy schemat ilustruje ten proces (rys. 2).
+    Mimo zdecydowanych różnic, pomysły i rozwiązania przewijają się pomiędzy programami open source, a oprogramowaniem komercyjnym. Te dwa zróżnicowane podejścia wpływają na siebie nawzajem napędzając ogólny rozwój oprogramowania. Poniższy schemat ilustruje ten proces (rys. 2).
     \begin{center}
         \includegraphics[width = 1\textwidth]{ruchy.png}
     \end{center}
@@ -148,7 +148,7 @@ W tym podrozdziale porównam oprogramowanie open source z aplikacjami komercyjny
 \begin{enumerate}
     \item W większości przypadków brak opłat za oprogramowanie, licencję oraz wdrożenie. Pozwolę sobie w tym miejscu przytoczyć pewną dygresję dotyczącą obsługi instytucji publicznych. Gdyby w placówkach takich jak szkoły czy biblioteki korzystano z produktów open source takich jak na przyład Open Office\footnote{\, Darmowy pakiet oprogramowania biurowego.} w miejsce szeroko stosowanego pakietu Microsoft Office\footnote{\, Komercyjny pakiet oprogramowania biurowego firmy Microsoft.} to mogłoby się to przyczynić w istotny sposób do zmniejszenia kosztów utrzymania. Pomniejszając w ten sposób wydatki, byłaby możliwość chociażby inwestycji w lepszy sprzęt.
     
-    \item Oprogramowanie dla użytkownika, a nie użytkownik dla oprogramowania. W przypadku programów open source mamy nad nimi pełną kontrolę, natomiast aplikacje komercyjne w dzisiejszych czasach często mają skłonności do manipulacji użytkownikami. Przykładowo, popularny komunikator firmy Meta\footnote{Dawniej firma pod nazwą "Facebook".} - Messenger, sprawia wrażenie skonstruowanego tak, aby konsument poświęcił w nim jak najwięcej czasu kosztem większej praktyczności czy wydajności. Dowodem na to jest fakt, iż przechodząc w aplikacji do konwersacji z danym użytkownikiem lub grupą nie widzimy nowych wiadomości od momentu pierwszej nieprzeczytanej, tylko od ostatnio wysłanej. Z tego powodu, aby przeczytać świeżą treść od początku do końca, często najpierw musimy poświęcić dłuższą chwilę aby przewinąć interfejs do góry, aby następnie kontynuować odczytywanie zaległych wiadomości.
+    \item Oprogramowanie dla użytkownika, a nie użytkownik dla oprogramowania. W przypadku programów open source mamy nad nimi pełną kontrolę, natomiast aplikacje komercyjne w dzisiejszych czasach często mają skłonności do manipulacji użytkownikami. Przykładowo, popularny komunikator firmy Meta\footnote{\, Dawniej firma pod nazwą "Facebook".} - Messenger, sprawia wrażenie skonstruowanego tak, aby konsument poświęcił w nim jak najwięcej czasu kosztem większej praktyczności czy wydajności. Dowodem na to jest fakt, iż przechodząc w aplikacji do konwersacji z danym użytkownikiem lub grupą nie widzimy nowych wiadomości od momentu pierwszej nieprzeczytanej, tylko od ostatnio wysłanej. Z tego powodu, aby przeczytać świeżą treść od początku do końca, często najpierw musimy poświęcić dłuższą chwilę aby przewinąć interfejs do góry, aby następnie kontynuować odczytywanie zaległych wiadomości.
     
     \item Posiadamy większą możliwość ingerencji w rozwój lub poprawę produktu. W sytuacji komercyjnego projektu, możemy ewentualnie zgłosić błąd do pomocy technicznej, jednakże nie mamy gwarancji, że zostanie on naprawiony. Z kolei w przypadku oprogramowania OS zawsze jest opcja zlecenia jakiemuś programiście aby dostosował aplikację według naszych potrzeb lub sami to zrobić, jeśli posiadamy odpowiednie umiejętności.
     
@@ -156,7 +156,7 @@ W tym podrozdziale porównam oprogramowanie open source z aplikacjami komercyjny
     
     \item Bardzo mocną stroną open source jest społeczność. "Nie byłoby możliwe, aby mała grupa osób udźwignęła ciężar stworzenia podłoża działającej sieci internetowej\cite{Kotula}." Każdy z zainteresowanych może wnieść coś od siebie, dzięki czemu powstanie produkt wysokiej jakości. Jak to się mówi "co dwie głowy to nie jedna", a idea wytwarzania oprogramowania OS przewiduje znacznie więcej tych "głów".
     
-    \item Obrońcy OSS, np. Brian Fitzgerald, wskazują, że open source jest w stanie rozwiązać problem tzw. kryzysu oprogramowania, który objawia się zwłaszcza w grupie rozmaitych systemów opartych o model komercyjny. Odnotowuje się m.in. takie bolączki, jak to, że ten typ software'u tworzy się długo, jest przy tym bardzo kosztowny, a gdy zostanie dostarczony odbiorcom, okazuje się że nie działa tak, jak powinien. Z kolei system OSS tworzone są dużo szybciej, taniej, a wszystkie błędy i niedociągnięcia usuwane są w zasadzie natychmiastowo, stąd zwolennicy nurtu OS stwierdzają, że jest to przyszłościowy model tworzenia programów, który przyczynia się do budowania społeczeństwa informacyjnego\cite{Kotula}.
+    \item Obrońcy OSS, np. Brian Fitzgerald, wskazują, że open source jest w stanie rozwiązać problem tzw. kryzysu oprogramowania, który objawia się zwłaszcza w grupie rozmaitych systemów opartych o model komercyjny. Odnotowuje się m.in. takie bolączki, jak to, że ten typ software'u tworzy się długo, jest przy tym bardzo kosztowny, a gdy zostanie dostarczony odbiorcom, okazuje się że nie działa tak, jak powinien. Z kolei systemy OSS tworzone są dużo szybciej, taniej, a wszystkie błędy i niedociągnięcia usuwane są w zasadzie natychmiastowo, stąd zwolennicy nurtu OS stwierdzają, że jest to przyszłościowy model tworzenia programów, który przyczynia się do budowania społeczeństwa informacyjnego\cite{Kotula}.
     
     \item Duży wybór aplikacji. Ogromna ilość OSS, a także różnych wersji, modyfikacji oraz poprawek itp\cite{Kotula}.
     
@@ -203,7 +203,7 @@ Czasami trudno stwierdzić jednoznacznie fakt na temat jednego lub drugiego zaga
 
 W praktyce wszystkie aplikację udostępnione jako free software kwalifikują się również jako OSS. Z kolei nie wszystkie programy będące otwartym oprogramowaniem spełniają kryteria wolnego oprogramowania, gdyż najczęściej nie spełniają jednego z czterech praw z definicji. Przykładowo oprogramowanie na licencji "Open Watcom" nie pozwala na prywatne używanie zmodyfikowanej wersji, a więc ten przypadek licencji OS jest niewolny z perspektywy free software, gdyż nie respektuje ona pierwszego prawa z definicji - "wolność do uruchomienia programu w dowolnym celu" (na przykład w celu prywatnym). Co więcej ruch wolnego oprogramowania uważa, że programy OS, które posiadają licencję bez koniecznego mechanizmu \textbf{copyleft} mogą ograniczać wolność, gdyż pliki wykonywalne takiego programu zależnego mogą zawierać dodatkowe niewolne ograniczenia\cite{gnu.difference}.
 
-Kolejnym nieoczywistym wątkiem jest wpływ danej koncepcji na rozwój systemów informatycznych. Z jednej strony ruch free software, który promuje licencję typu GPL ma pozytywny wpływ na rozwój oprogramowania, gdyż każde dzieło pochodne będzie dostępne dla programistów z całego świata, którzy posiadają potencjał aby ulepszyć dzieło. Jednak można pomyśleć w inny sposób. Przykładowo, gdyby produkt \textbf{Chromium} był obarczony licencją typu GPL, to rozwój tej aplikacji byłby w pewnym sensie ograniczony. Dzięki temu że \textbf{Chromium} jest udostępniony na licencji BSD, to firma \textbf{Microsoft} wspiera tą aplikację dodając i ulepszając funkcjonalności, gdyż sama korzysta z kodu źródłowego Chromium w swojej przeglądarce \textbf{Microsoft Edge}\cite{microsoft.edge}. Nie miałoby to miejsca w przypadku licencji GPL, ponieważ wówczas Microsoft musiałby udostępnić całą zawartość swojego produktu, co z pewnością nie jest pożądanym rezultatem, gdyż uniemożliwiłoby to maksymalizację zysków. (dopisać, że dzięki temu Microsoft wspiera dzieło pierwotne Chromium i zachodzi współpraca, która nie byłaby możliwa w przypadku GPL)
+Kolejnym nieoczywistym wątkiem jest wpływ danej koncepcji na rozwój systemów informatycznych. Z jednej strony ruch free software, który promuje licencję typu GPL ma pozytywny wpływ na rozwój oprogramowania, gdyż każde dzieło pochodne będzie dostępne dla programistów z całego świata, którzy posiadają potencjał aby ulepszyć dzieło. Jednak można pomyśleć w inny sposób. Przykładowo, gdyby produkt \textbf{Chromium} był obarczony licencją typu GPL, to rozwój tej aplikacji byłby w pewnym sensie ograniczony. Dzięki temu że \textbf{Chromium} jest udostępniony na licencji BSD, to firma \textbf{Microsoft} wspiera tą aplikację dodając i ulepszając funkcjonalności, gdyż sama korzysta z kodu źródłowego Chromium w swojej przeglądarce \textbf{Microsoft Edge}\cite{microsoft.edge}. Nie miałoby to miejsca w przypadku licencji GPL, ponieważ wówczas Microsoft musiałby udostępnić całą zawartość swojego produktu, co z pewnością nie jest pożądanym rezultatem, gdyż uniemożliwiłoby to maksymalizację zysków. Aktualnie firmie Microsoft opłaca się udostępnianie swoich nowości, gdyż dzięki temu produkt Microsoft Edge będzie kompatybilny z kolejnymi wersjami Chromium.
 
 Oba ruchy, wolne oprogramowanie i open source, są osobnymi koncepcjami. Fundamentalna różnica między tymi dwoma inicjatywami leży w uznawanych przez nie wartościach, sposobach patrzenia na świat. Dla open source kwestia, czy aplikacja powinna mieć dostępne otwarte źródła to problem praktyczny, nie etyczny. Open source to metodyka konstruowania, a wolne oprogramowanie to ruch społeczny. Dla społeczności open source system informatyczny, który nie jest wolny to rozwiązanie gorsze niż optymalne. Dla ruchu Wolnego Oprogramowania aplikacje, które nie są wolne to problem społeczny, którego rozwiązaniem jest free software\cite{Kotula}.
 
@@ -215,17 +215,52 @@ Przeanalizuje kilka, moim zdaniem ciekawych przykładów OSS w kontekście otwar
 
 \subsubsection{Visual studio code}
 
+\textbf{Visual studio code}\footnote{\, Wymiennie będę stosował terminy: \emph{Visual studio code}, \emph{VS code}} to produkt firmy Microsoft służący do wytwarzania programów. Zazwyczaj takie aplikacje są dedykowane pisaniu w konkretnym języku programowania, natomiast VS code cechuje się elastycznością co do stosowanego w nim systemu znaków. To jeden z przypadków oprogramowania open source udostępnionego przez wielką korporację, która jest bardziej kojarzona ze swoich zamkniętych produktów komercyjnych niż tych z otwartym źródłem. Jest to przykład obalający mit, iż programy OS tworzone są jedynie przez indywidualnych programistów posiadających skłonności do aktywności pozbawionych korzyści finansowych. Aplikacja wytworzona jako otwarte oprogramowanie może być dobrym ruchem strategicznym, który w konsekwencji przyniesie zyski lub poprawi reputację marki.
+
+Na serwisie \emph{github}\footnote{\, Serwis firmy Microsoft, który umożliwia przechowywanie kodu źródłowego programów w repozytoriach} w repozytorium VS code, znajduje się plik "\emph{LICENSE.txt}" w którym znajduje się licencja na kod tego oprogramowania. Według podanych informacji VS code działa na mocy licencji \textbf{MIT}, która pozwala na:
+\begin{itemize}
+    \item używanie do celów komercyjnych,
+    \item własne modyfikowanie kodu,
+    \item udostępnianie własnych wersji (dystrybucja),
+    \item używanie prywatne.
+\end{itemize}
+Licencja MIT nie zapewnia gwarancji jakości utworów pochodnych pod żadnym względem oraz zobowiązuje autorów i wykonawców do odpowiedzialności prawnej w przypadku naruszenia zasad\cite{vscode.mit}.
+
+Poza prawami przedstawionymi w licencji MIT, możemy znaleźć warunki korzystania z produktów Microsoft na stronie "https://code.visualstudio.com/license"\cite{vscode.microsoft}, które również dotyczą aplikacji Visual Studio Code. Głoszą one między innymi, że:
+\begin{itemize}
+    \item oprogramowanie umożliwia pobieranie zewnętrznych dodatków pochodzących od Microsoft lub innych źródeł działających na swoich własnych licencjach,
+    \item aplikacja może pobierać twoje dane i przesyłać je do Microsoft w celach podniesienia jakości swoich usług,
+    \item nie można próbować odtworzyć kodu źródłowego ze skompilowanego programu,
+    \item nie jest dozwolone, aby ograniczać, blokować lub modyfikować jakiekolwiek powiadomienia czy powiązania, które pochodzą od Microsoft\cite{vscode.microsoft}.
+\end{itemize}
+
+Część użytkowników zasygnalizowała sprzeczność zasad przedstawionych na stronie z regułami licencji MIT zawartej w repozytorium, jednak zostały one wyjaśnione przez opiekuna VS Code - Chris'a Dias. Chris tłumaczy, że Visual Studio Code jest czymś odrębnym od repozytorium VS Code. Zamiarem było dostarczenie produktu marki Microsoft opartego o kod na bazie open source, do którego społeczność może mieć dostęp, korzystać z niego i dalej go rozwijać. Same repozytorium VS Code jest OS, na bazie którego można tworzyć własne oprogramowanie. Tak samo jak w przypadku przeglądarki Chrome, która została zbudowana na podstawie Chromium, analogicznie Visual Studio Code powstało z repozytorium VS Code. Visual Studio Code jest wersją VS Code, która jest specjalnie dostosowana pod usługi Microsoft oraz posiada osobną licencję zgodną ze standardami firmy. Użytkownik posiada wybór, czy korzystać z gotowej wersji Visual Studio Code, która jest chroniona licencją usług Microsoft, albo pobrać kod z repozytorium i dostosować go pod własne potrzeby na mocy licencji MIT\cite{vscode.issues}.
+
+Reasumując, mamy tutaj do czynienia ze zbudowaniem bazy w postaci otwartego oprogramowania, z której następnie została stworzona markowa aplikacja. Samo źródło to repozytorium VS Code, które jest otwarte i dostępne dla wszystkich, aby je modyfikować oraz rozwijać. Jest to ogromna korzyść, ponieważ potencjalne ulepszenia wprowadzane przez społeczność open source mogą być z łatwością zaaplikowane przez Microsoft do markowej wersji Visual Studio Code chronionej specjalną licencją. Widać, że jest to zastosowanie koncepcji otwartego kodu źródłowego w czystych celach praktycznych. Nie jest to program zgodny z założeniami ruchu wolnego oprogramowania. Przedstawiciele koncepcji free software mogliby zarzucić, że Microsoft udostępnił tą wygodną do rozwijania przez innych część produktu, a pozostałą ukrył, bo chce mieć kontrolę nad użytkownikami ograniczając ich wolność dla swoich komercyjnych korzyści.
+
 \subsubsection{VSCodium}
 
-\subsubsection{Wordpress}
+Ten program bezpośrednio nawiązuje do poprzedniego przykładu. VSCodium to nic innego jak skompilowany kod z repozytorium VS Code bez dodatkowego kodu od Microsoft'u. Został on stworzony aby ułatwić korzystanie z VS Code bez ukrytych skryptów dodanych przez Microsoft. Pod względem wyglądu oraz większości zastosowań VSCodium nie różni się od Visual Studio Code prawie w ogóle. Wszystko co da się zrobić w VS Code, można również wykonać w VSCodium, poza pewnymi wyjątkami. Niektóre dodatki, które pochodzą bezpośrednio od Microsoft, mogą być nie wspierane przez VSCodium\cite{vscodium.article}.
 
-\subsubsection{Google chrome}
+\subsubsection{Wordpress}
 
 \subsubsection{Android}
 
 \subsubsection{Docker desktop}
 
 \subsubsection{Elastic Search}
+
+\section{Tworzenie projektu open source}
+
+ogólnie że opiszę w tym rozdziale wmi adventure jako open source czy coś takiego, i skąd ten wybór
+
+\subsection{Odpowiednie repozytorium}
+
+jak powinno wyglądać repo open source na podstawie wmi adventure, plus trochę o licencji wmi adventure - apache
+
+\subsection{Idea społeczna open source}
+
+tak od siebie, czym objawia się wyjątkowość tego projektu, i gdzie w nim ta idea w pełni open source
 
 \newpage
 \begin{thebibliography}{99}
@@ -255,5 +290,20 @@ Przeanalizuje kilka, moim zdaniem ciekawych przykładów OSS w kontekście otwar
 \bibitem{microsoft.edge}
   Surur, \emph{Microsoft wspiera projekt Chromium} [online], [dostęp: 9.12.2021]. Autorstwa "Surur" https://mspoweruser.com/author/surur/. 
   Dostęp na https://mspoweruser.com/microsoft-touts-their-contributions-to-chromium-development/.
+\bibitem{vscode.mit}
+    Chris Dias, \emph{Licencja VS code} [online], [dostęp: 25.12.2021].
+    Dostęp na https://github.com/microsoft/vscode/blob/main/LICENSE.txt.
+\bibitem{vscode.microsoft}
+    \emph{Licencja Visual Studio Code jako produktu Microsoft} [online], [dostęp: 26.12.2021].
+    Dostęp: https://code.visualstudio.com/license.
+\bibitem{vscode.issues}
+    Chris Dias, \emph{Wyjaśnienie licencjonowania Visual Studio Code w sekcji "issues" na github} [online], [dostęp: 25.12.2021].
+    Dostęp: https://github.com/microsoft/vscode/issues/60.    
+\bibitem{vscodium.article}
+    Alan Jones, \emph{Artykuł o VSCodium.} [online], [dostęp: 2.01.2021].
+    Dostęp: https://towardsdatascience.com/what-is-vscodium-and-should-you-be-using-it-926e1369169a.
+\bibitem{vscodium.website}
+    \emph{Strona VSCodium} [online], [dostęp: 2.01.2021].
+    Dostęp: https://vscodium.com/.
 \end{thebibliography}
 \end{document}
