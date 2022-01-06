@@ -31,17 +31,17 @@ Posługując się współczesnymi komputerami wykorzystujemy również odpowiedn
 
 Na początku, w latach 60. oraz 70. XX wieku pisanie oprogramowania było domeną małej grupy naukowców, którzy rozpowszechniali i udostępniali kod źródłowy w kręgach zainteresowanych osób. Tajniki tego zagadnienia były zatem dostępne, jednak pojawiła się chęć uznania własności oraz uzyskania zarobku. W tym samym czasie w branży komputerowej zaczęto zaprzestawać dostarczania kodu źródłowego wraz z oprogramowaniem, co miało zapewnić firmom wzrost zysków poprzez rozdzielną sprzedaż tych komponentów. W latach 60 rozpoczęto rejestrowanie programów komputerowych w urzędzie ochrony praw autorskich\cite{Kotula}. Na początku lat 70 programiści stopniowo zaczęli zarabiać pieniądze na podstawie własnych programów komputerowych, których kod źródłowy traktowali jako pilnie strzeżoną tajemnicę\cite{Richter}. Tak narodziło się oprogramowanie komercyjne, które rozpoczęło swoją intensywną ekspansję w latach 80\cite{Kotula}.
 
-Pomimo komercjalizacji systemów informatycznych, były takie osoby jak Richard Matthew Stallman, których poglądy nie godziły się z koniecznością tworzenia oprogramowania zamkniętego (ang. \emph{closed source} - dostępnego w postaci kodu wykonywalnego). Zdanie Stallmana zostało ukształtowane przede wszystkim przez codzienną rzeczywistość pracy za pomocą urządzeń takich jak drukarka, której oprogramowanie było licencjonowane tak, że nie można było go przeprogramować, dostosowując do własnych potrzeb. „Konsument, nabywając jakiś produkt – taki jak drukarka laserowa – powinien mieć możliwość wykorzystania go w dowolny sposób”\cite{Kotula}. Stanowisko takich ludzi jak Stallman oraz wciąż pojawiająca się potrzeba na istnienie oprogramowania z dostępnym kodem źródłowym, doprowadziło do ukształtowania technologii określanych terminem \emph{open source}\footnote{\, Wymiennie będę stosował terminy: \emph{open source}, \emph{open source software}, \emph{oprogramowanie open source}, \emph{otwarte oprogramowanie} oraz akronimy OS, OSS.}. Początkowo przyjmowane w sposób niejednoznaczny, dziś zyskują coraz większą popularność i są coraz szerzej wykorzystywane\cite{Kotula}. 
+Pomimo komercjalizacji systemów informatycznych, były takie osoby jak Richard Matthew Stallman, których poglądy nie godziły się z koniecznością tworzenia oprogramowania zamkniętego (ang. \emph{closed source} - dostępnego w postaci kodu wykonywalnego). Zdanie Stallmana zostało ukształtowane przede wszystkim przez codzienną rzeczywistość pracy za pomocą urządzeń takich jak drukarka, której oprogramowanie było licencjonowane tak, że nie można było go przeprogramować, dostosowując do własnych potrzeb. „Konsument, nabywając jakiś produkt – taki jak drukarka laserowa – powinien mieć możliwość wykorzystania go w dowolny sposób”\cite{Kotula}. Stanowisko takich ludzi jak Stallman oraz wciąż pojawiająca się potrzeba na istnienie oprogramowania z dostępnym kodem źródłowym, doprowadziło do ukształtowania technologii określanych terminem \emph{open source}\footnote{\, Wymiennie będę stosował terminy: \emph{open source}, \emph{open source software}, \emph{oprogramowanie open source}, \emph{otwarte oprogramowanie} oraz akronimy \emph{OS}, \emph{OSS}.}. Początkowo przyjmowane w sposób niejednoznaczny, dziś zyskują coraz większą popularność i są coraz szerzej wykorzystywane\cite{Kotula}. 
 
-Niniejsza praca poświęcona jest projektom oraz aspektom związanych z open source. Praca składa się ze wstępu, bibliografii i trzech zasadniczych części. W pierwszym rozdziale zdefiniuję termin \emph{open source} oraz pojęcia z nim skorelowane, wymienię i opiszę kluczowe rodzaje licencji oraz porównam oprogramowanie otwarte z oprogramowaniem komercyjnym przywołując ich wady i zalety. Następnie wyjaśnię czym jest idea wolnego oprogramowania zwracając uwagę na jej różnice względem ruchu open source. Przeanalizuje również kilka konkretnych przykładów otwartego oprogramowania w kontekście wolności i otwartości. W ostatniej części pracy opowiem o tworzeniu aplikacji open source na podstawie projektu inżynierskiego \emph{Wmi Adventure}. Uzasadnię skąd wybór tego rodzaju licencji, jakie należy załączyć pliki oraz jaką dokumentację sporządzić do repozytorium\footnote{\, Miejsce, w których przechowuje się kod źródłowy oprogramowania.} projektowego. Wreszcie przedstawie ideę open source w znaczeniu społecznym odwołując się do naszego projektu inżynierskiego.
+Niniejsza praca poświęcona jest projektom oraz aspektom związanych z \emph{open source}. Praca składa się ze wstępu, bibliografii i trzech zasadniczych części. W pierwszym rozdziale zdefiniuję termin \emph{open source} oraz pojęcia z nim skorelowane, wymienię i opiszę kluczowe rodzaje licencji oraz porównam oprogramowanie otwarte z oprogramowaniem komercyjnym przywołując ich wady i zalety. Następnie wyjaśnię czym jest idea wolnego oprogramowania zwracając uwagę na jej różnice względem ruchu \emph{open source}. Przeanalizuje również kilka konkretnych przykładów otwartego oprogramowania w kontekście wolności i otwartości. W ostatniej części pracy opowiem o tworzeniu aplikacji \emph{open source} na podstawie projektu inżynierskiego \emph{Wmi Adventure}. Uzasadnię skąd wybór tego rodzaju licencji, jakie należy załączyć pliki oraz jaką dokumentację sporządzić do repozytorium\footnote{\, Miejsce, w których przechowuje się kod źródłowy oprogramowania.} projektowego. Wreszcie przedstawie ideę \emph{open source} w znaczeniu społecznym odwołując się do naszego projektu inżynierskiego.
 
 \section{Definicja open source}
 
 \hspace{4mm} W 1997 roku utworzony został i wprowadzony termin \emph{open source}. Twórcami tej koncepcji była pewna grupa osób, m.in. Eric S. Raymond, Tim O'Reilly i Bruce Perens. Ważnym elementem powstania tej idei był esej Reymonda pt. \emph{The cathedra and the bazaar} (pol. \emph{Katedra i bazar}), gdzie poruszył kwestię stylu rozwoju oprogramowania jaki prowadził Linus Torvarlds wraz z projektem systemu operacyjnego Linux. Reymond porównał ten proces do formy "hałaśliwego bazaru", gdzie wszyscy od samego początku projektu wprowadzali modyfikacje i proponowali własne rozwiązania\cite{Kotula}.  
 
 
-W 1998 roku Eric Raymond i Bruce Perens powołali organizację non profit - Open Source Initiative (skrót OSI)\cite{Kotula}. OSI nadzoruje standard open source (The Open Source Definiction, OSD), który jest używany do tego, aby jednoznacznie określać, czy dane oprogramowanie jest oprogramowaniem open source. OSI certyfikuje także licencje (OSI Certified), aby potwierdzić, że dana
-licencja spełnia postulaty OSD\cite{opensource.org}. Pojęcie \emph{open source} jest zdefiniowane następującymi postulatami\cite{Kotula}:
+W 1998 roku Eric Raymond i Bruce Perens powołali organizację non profit - \emph{Open Source Initiative} (skrót \emph{OSI})\cite{Kotula}. \emph{OSI} nadzoruje standard \emph{open source} (ang. \emph{The Open Source Definiction, OSD}), który jest używany do tego, aby jednoznacznie określać, czy dane oprogramowanie jest oprogramowaniem \emph{open source}. \emph{OSI} certyfikuje także licencje (\emph{OSI Certified}), aby potwierdzić, że dana
+licencja spełnia postulaty \emph{OSD}\cite{opensource.org}. Pojęcie \emph{open source} jest zdefiniowane następującymi postulatami\cite{Kotula}:
 
 \begin{enumerate}
     \item \textbf{Wolna redystrybucja (ang. \emph{free redistribution}).}
@@ -54,7 +54,7 @@ licencja spełnia postulaty OSD\cite{opensource.org}. Pojęcie \emph{open source
     
     \item \textbf{Dzieła pochodne (ang. \emph{derived works}).}
     
-    \hspace{4mm} Licencja zgodna ze standardem OSD musi zapewniać możliwość modyfikowania pierwotnego programu oraz tworzenia nowych aplikacji na jego bazie.
+    \hspace{4mm} Licencja zgodna ze standardem \emph{OSD} musi zapewniać możliwość modyfikowania pierwotnego programu oraz tworzenia nowych aplikacji na jego bazie.
     
     \item \textbf{Spójność kodu źródłowego autora (ang. \emph{integrity of the author’s source code}).}
     
@@ -103,7 +103,7 @@ Z drugiej strony istnieje taka licencja jak \textbf{BSD}, która nie nakazuje st
 
 Przykładem oprogramowania działającego w oparciu o licencje BSD jest chociażby \textbf{Chromium}, na bazie którego powstała dobrze znana przeglądarka \textbf{Google Chrome}. Google Chrome jest darmowe, jednak nie udostępnia swojego kodu źródłowego. Twórcy tej przeglądarki mają do tego prawo właśnie ze względu na możliwości licencji BSD\cite{wikipedia3}. 
 
-Działanie licencji typu GPL oraz BSD można zaprezentować za pomocą następującego schematu;
+Działanie licencji typu GPL oraz BSD można zaprezentować za pomocą następującego schematu (rys. 1);
 \begin{center}
         \includegraphics[width = 1\textwidth]{shemat-GPL-BSD.png}
 \end{center}
@@ -211,18 +211,18 @@ Sam Stallman wyjaśniał, że obydwa zjawiska są jak dwa polityczne obozy dzia�
 
 \subsection{Przykłady}
 
-Przeanalizuje kilka, moim zdaniem ciekawych przykładów OSS w kontekście otwartości i wolności.
+\hspace{4mm} Przeanalizuje kilka, moim zdaniem ciekawych przykładów OSS w kontekście otwartości i wolności.
 
 \subsubsection{Visual studio code}
 
-\textbf{Visual studio code}\footnote{\, Wymiennie będę stosował terminy: \emph{Visual studio code}, \emph{VS code}} to produkt firmy Microsoft służący do wytwarzania programów. Zazwyczaj takie aplikacje są dedykowane pisaniu w konkretnym języku programowania, natomiast VS code cechuje się elastycznością co do stosowanego w nim systemu znaków. To jeden z przypadków oprogramowania open source udostępnionego przez wielką korporację, która jest bardziej kojarzona ze swoich zamkniętych produktów komercyjnych niż tych z otwartym źródłem. Jest to przykład obalający mit, iż programy OS tworzone są jedynie przez indywidualnych programistów posiadających skłonności do aktywności pozbawionych korzyści finansowych. Aplikacja wytworzona jako otwarte oprogramowanie może być dobrym ruchem strategicznym, który w konsekwencji przyniesie zyski lub poprawi reputację marki.
+\hspace{4mm} \textbf{Visual studio code}\footnote{\, Wymiennie będę stosował terminy: \emph{Visual studio code}, \emph{VS code}} to produkt firmy Microsoft służący do wytwarzania programów. Takie aplikacje zazwyczaj są dedykowane pisaniu w konkretnym języku programowania, natomiast VS code cechuje się elastycznością co do stosowanego w nim systemu znaków. To jeden z przypadków oprogramowania open source udostępnionego przez wielką korporację, która jest bardziej kojarzona ze swoich zamkniętych produktów komercyjnych niż tych z otwartym źródłem. Jest to przykład obalający mit, iż programy OS tworzone są jedynie przez indywidualnych programistów posiadających skłonności do aktywności, które nie niosą za sobą korzyści finansowych. Aplikacja wytworzona jako otwarte oprogramowanie może być dobrym ruchem strategicznym, który w konsekwencji przyniesie zyski lub poprawi reputację marki.
 
-Na serwisie \emph{github}\footnote{\, Serwis firmy Microsoft, który umożliwia przechowywanie kodu źródłowego programów w repozytoriach} w repozytorium VS code, znajduje się plik "\emph{LICENSE.txt}" w którym znajduje się licencja na kod tego oprogramowania. Według podanych informacji VS code działa na mocy licencji \textbf{MIT}, która pozwala na:
+Na serwisie \emph{GitHub}\footnote{\, Serwis firmy Microsoft, który umożliwia przechowywanie kodu źródłowego programów w repozytoriach} w repozytorium \emph{vscode}\footnote{\, Nazwa miejsca w których znajduje się kod produktu VS Code.}, znajduje się plik "\emph{LICENSE.txt}" w którym znajduje się licencja na kod tego oprogramowania. Według podanych informacji \emph{vscode} działa na mocy licencji \textbf{MIT}, która pozwala na:
 \begin{itemize}
     \item używanie do celów komercyjnych,
     \item własne modyfikowanie kodu,
     \item udostępnianie własnych wersji (dystrybucja),
-    \item używanie prywatne.
+    \item użytkowanie prywatne.
 \end{itemize}
 Licencja MIT nie zapewnia gwarancji jakości utworów pochodnych pod żadnym względem oraz zobowiązuje autorów i wykonawców do odpowiedzialności prawnej w przypadku naruszenia zasad\cite{vscode.mit}.
 
@@ -234,49 +234,131 @@ Poza prawami przedstawionymi w licencji MIT, możemy znaleźć warunki korzystan
     \item nie jest dozwolone, aby ograniczać, blokować lub modyfikować jakiekolwiek powiadomienia czy powiązania, które pochodzą od Microsoft\cite{vscode.microsoft}.
 \end{itemize}
 
-Część użytkowników zasygnalizowała sprzeczność zasad przedstawionych na stronie z regułami licencji MIT zawartej w repozytorium, jednak zostały one wyjaśnione przez opiekuna VS Code - Chris'a Dias. Chris tłumaczy, że Visual Studio Code jest czymś odrębnym od repozytorium VS Code. Zamiarem było dostarczenie produktu marki Microsoft opartego o kod na bazie open source, do którego społeczność może mieć dostęp, korzystać z niego i dalej go rozwijać. Same repozytorium VS Code jest OS, na bazie którego można tworzyć własne oprogramowanie. Tak samo jak w przypadku przeglądarki Chrome, która została zbudowana na podstawie Chromium, analogicznie Visual Studio Code powstało z repozytorium VS Code. Visual Studio Code jest wersją VS Code, która jest specjalnie dostosowana pod usługi Microsoft oraz posiada osobną licencję zgodną ze standardami firmy. Użytkownik posiada wybór, czy korzystać z gotowej wersji Visual Studio Code, która jest chroniona licencją usług Microsoft, albo pobrać kod z repozytorium i dostosować go pod własne potrzeby na mocy licencji MIT\cite{vscode.issues}.
+Część użytkowników zasygnalizowała sprzeczność zasad przedstawionych na stronie z regułami licencji MIT zawartej w repozytorium, jednak została ona wyjaśniona przez opiekuna \emph{vscode} - Chris'a Dias. Chris tłumaczy, że Visual Studio Code jest czymś odrębnym od repozytorium \emph{vscode}. Visual Studio Code jest czymś więcej niż kod źródłowy w repozytorium \emph{vscode}, to jego specjalnie skonfigurowana postać pod markę Microsoft wykorzystująca ich dodatkowe skrypty oraz znaki towarowe. Zamiarem było dostarczenie produktu opartego na otwartym kodzie, do którego społeczność może mieć dostęp, korzystać z niego i dalej go rozwijać. Same repozytorium \emph{vscode} jest OS, na bazie którego można tworzyć własne oprogramowanie. Tak samo jak w przypadku przeglądarki Chrome, która została zbudowana na podstawie Chromium, analogicznie Visual Studio Code powstało z repozytorium \emph{vscode}. Visual Studio Code jest wersją vscode, która posiada osobną licencję zgodną ze standardami firmy. Użytkownik ma wybór, czy korzystać z gotowej wersji Visual Studio Code, która jest chroniona licencją usług Microsoft lub pobrać kod z repozytorium i dostosować go pod własne potrzeby na mocy licencji MIT\cite{vscode.issues}.
 
-Reasumując, mamy tutaj do czynienia ze zbudowaniem bazy w postaci otwartego oprogramowania, z której następnie została stworzona markowa aplikacja. Samo źródło to repozytorium VS Code, które jest otwarte i dostępne dla wszystkich, aby je modyfikować oraz rozwijać. Jest to ogromna korzyść, ponieważ potencjalne ulepszenia wprowadzane przez społeczność open source mogą być z łatwością zaaplikowane przez Microsoft do markowej wersji Visual Studio Code chronionej specjalną licencją. Widać, że jest to zastosowanie koncepcji otwartego kodu źródłowego w czystych celach praktycznych. Nie jest to program zgodny z założeniami ruchu wolnego oprogramowania. Przedstawiciele koncepcji free software mogliby zarzucić, że Microsoft udostępnił tą wygodną do rozwijania przez innych część produktu, a pozostałą ukrył, bo chce mieć kontrolę nad użytkownikami ograniczając ich wolność dla swoich komercyjnych korzyści.
+Reasumując, mamy tutaj do czynienia ze zbudowaniem bazy w postaci otwartego oprogramowania, z której następnie została stworzona markowa aplikacja. Samo źródło to repozytorium \emph{vscode}, które jest otwarte i dostępne dla wszystkich, aby je modyfikować oraz rozwijać. Jest to ogromna korzyść, ponieważ potencjalne ulepszenia wprowadzane przez społeczność open source mogą być z łatwością zaaplikowane przez Microsoft do markowej wersji VS Code chronionej specjalną licencją. Widać, że jest to zastosowanie koncepcji otwartego kodu źródłowego w celach czysto praktycznych. Nie jest to program zgodny z założeniami ruchu wolnego oprogramowania. Przedstawiciele koncepcji free software mogliby zarzucić, że Microsoft udostępnił tą wygodną do rozwijania przez innych część produktu, a pozostałą ukrył, bo chce mieć kontrolę nad użytkownikami ograniczając ich wolność dla swoich komercyjnych korzyści.
 
 \subsubsection{VSCodium}
 
-Ten program bezpośrednio nawiązuje do poprzedniego przykładu. VSCodium to nic innego jak skompilowany kod z repozytorium VS Code bez dodatkowego kodu od Microsoft'u. Został on stworzony aby ułatwić korzystanie z VS Code bez ukrytych skryptów dodanych przez Microsoft. Pod względem wyglądu oraz większości zastosowań VSCodium nie różni się od Visual Studio Code prawie w ogóle. Wszystko co da się zrobić w VS Code, można również wykonać w VSCodium, poza pewnymi wyjątkami. Niektóre dodatki, które pochodzą bezpośrednio od Microsoft, mogą być nie wspierane przez VSCodium\cite{vscodium.article}.
+\hspace{4mm} Ten program bezpośrednio nawiązuje do poprzedniego przykładu. \textbf{VSCodium} to nic innego jak skompilowany kod z repozytorium VS Code bez dodatkowego kodu od Microsoft'u. Został on stworzony aby ułatwić korzystanie z VS Code bez ukrytych skryptów dodanych przez Microsoft. Pod względem wyglądu oraz większości zastosowań VSCodium nie różni się od Visual Studio Code prawie w ogóle. Wszystko co da się zrobić w VS Code, można również wykonać w VSCodium, poza pewnymi wyjątkami. Niektóre dodatki, które pochodzą bezpośrednio od Microsoft, mogą być nie wspierane przez VSCodium\cite{vscodium.article}. 
 
-\subsubsection{Wordpress}
+Na oficjalnej stronie VSCodium w podtytule widnieje: \emph{Free/Libre Open Source Software Binaries of VS Code}. Oznacza to, że ten program jest nie tylko otwartym, ale również wolnym oprogramowaniem, gdyż nie tylko jego źródło jest zgodne z założeniami OS, ale również pliki wykonywalne, które nie zostały zmodyfikowane przez dodatkowe skrypty niezgodne z koncepcją OSS\cite{vscodium.website}.
 
-\subsubsection{Android}
+Ten przypadek pokazuje, iż pewna grupa użytkowników ma potrzebę aby korzystać w pełni wolnego i otwartego oprogramowania. Same otwarte źródło czasami nie wystarczy. VSCodium jest tego dowodem, ponieważ ktoś włożył wysiłek, aby skonfigurować VS Code specjalnie pod te oczekiwania.
 
-\subsubsection{Docker desktop}
+\subsubsection{WordPress}
+
+\hspace{4mm} \textbf{WordPress} to aplikacja do tworzenia stron internetowych. Pozwala ona również edytować utworzone strony, jest to tak zwany CMS (ang. \emph{Content management system}) - system zarządzania treścią. WordPress jest nie tylko open source, ale również pełnoprawnym programem typu free software. Jest opublikowany na zasadach licencji GPLv2 (lub nowszej), która została stworzona przez fundację wolnego oprogramowania (ang. \emph{Free Software Foundation})\cite{wordpress.license}. Na mocy takiej licencji, każda modyfikacja systemu WordPress musi pozostać na tych samych warunkach, które nakazują między innymi otwartość kodu źródłowego. Dotyczy to również sporej ilości dodatków\footnote{\, W programie WordPress bardzo popularne jest wykorzystywanie tak zwanych szablonów, czyli dodatków, które wpływają na wygląd strony lub jej funkcje.} dołączonych do aplikacji Wordpress. Na oficjalnej stronie \emph{wordpress.org} jest napisane, że jeśli użytkownik nie zgadza się z warunkami licencji typu GPL, to rekomendowaną dla niego alternatywną platformą jest \textbf{Serendipity}, które zostało opublikowane na zasadach licencji \textbf{BSD}\cite{wordpress.license}.
+
+Pragnę w tym miejscu podkreślić, iż to że produkt jest wolnym oprogramowaniem, nie oznacza że musi być darmowy\footnote{\, Istnieje pojęcie dla darmowego oprogramowania - \textbf{freeware}. Nie należy go mylić z pojęciem \textbf{free software}, które nie musi być jednocześnie \emph{freeware'em}. Analogicznie termin \emph{freeware} nie wymaga w swojej definicji aby program był \emph{free software'em} lub udostępniał swój kod źródłowy\cite{wiki.freeware}.}. WordPress jest tego przykładem, ponieważ posiada dodatki, które są płatne, a jednocześnie udostępnione w sposób jaki nakazuje licencja GPL. Czasami ludzie wykorzystują swoje umiejętności, aby wytwarzać rozbudowane szablony graficzne, które WordPress udostępnia do pakietu użytkownika pod warunkiem finansowego wsparcia dla twórców. Licencja GPL nie narzuca, że wszystko musi być bezpłatne, tylko skupia się na oprogramowaniu, które spełnia wszystkie prawa wolności użytkownika. Dlatego WordPress oferuje zestaw dodatków, które jednocześnie respektują licencję GPL oraz są płatne, posiadają elementy, za które trzeba zapłacić lub zachęcają do finansowego wsparcia. Wszystko co mają ze sobą wspólnego to wsparcie koncepcji open source, systemu WordPress oraz licencji GPL\cite{wordpress.commercial}.
+
+\subsubsection{Docker Desktop}
+
+\hspace{4mm} \textbf{Docker Desktop} to oprogramowanie do tworzenia wirtualnych środowisk programistycznych na systemie operacyjnym Windows lub Mac\footnote{\, System operacyjny firmy \emph{Apple}.}. Przypadek tego produktu jest ciekawy, ponieważ nagle jego licencja i warunki korzystania się zmieniły. Wcześniej \textbf{Docker desktop} był w pełni darmowy, natomiast od 31 Sierpnia 2021 roku pobiera on opłatę, gdy wykorzystywany jest przez większe przedsiębiorstwa. Na stronie "https://www.docker.com/blog/updating-product-subscriptions/" przedstawione są następujące warunki\cite{docker.update}:
+\begin{itemize}
+    \item Docker Desktop pozostaje darmowy dla małych firm (mniej niż 250 zatrudnionych osób i mniej niż 10 milionów dolarów rocznego przychodu), użytku osobistego, celów edukacyjnych i dla nie komercyjnych projektów open source.
+    \item Wymagana jest opłata za pomocą subskrypcji w zależności od pakietu \textbf{Pro}, \textbf{Team} lub \textbf{Business}.
+    \item Podmioty, które zaliczają się w zakres płatnych pakietów od 31 sierpnia 2021 roku do 31 stycznia 2022 roku muszą opłacić subskrypcję aby korzystać z Docker Desktop.
+    \item Istniejąca dotychczas darmowa subskrypcja "Docker Free" została zmieniona na "Docker Personal".
+    \item Zmiany nie dotyczą samego silnika Docker czy poprzednich wersji open source lub projektu Moby\footnote{\textbf{Moby} to komponent open source pomagający zarządzać wirtualnymi środowiskami.}.
+\end{itemize}
+
+David Oro tłumaczy w swoim blogu, że zmiany skupiają się jedynie na produkcie Docker Desktop używanym na szeroką skalę. Należy pamiętać, jeżeli wykorzystujemy usługi na systemie operacyjnym Linux, to te zmiany nas nie dotyczą. Docker Desktop jest mieszanką otwartego oraz zamkniętego oprogramowania. Zmiany w licencji dotyczą właśnie tych zamkniętych elementów. To oznacza że wszystkie inne komponenty (np. \emph{Docker Engine, Docker Daemon, Docker CLI, Docker Compose, BuildKit}), które są OS, pozostaną darmowe\cite{docker.oro}.
+
+Podsumowując, jest to przykład wykorzystywania koncepcji otwartego oprogramowania w celach praktycznych, gdyż autorzy udostępniają te części, którym jest im wygodnie jako open source, z kolei niektóre z nich zamykają. Z pewnością nie zgadza się to z ideą wolnego oprogramowania, mimo że te otwarte komponenty są publikowane za pomocą licencji GPL, to całość programu Docker Desktop jest ograniczająca\cite{docker.licensing}. Można traktować to jako pewne niesprawiedliwe naruszenie z perspektywy przedsiębiorstw, które szeroko wykorzystywały tę usługę. Wyobraźmy sobie że używamy jakiegoś otwartego i darmowego oprogramowania w swojej rozbudowanej architekturze informatycznej, a nagle staje się ono dla nas zamknięte oraz płatne. Z pewnością nie jest to rozwiązanie korzystne dla ukształtowanych podmiotów ze stałą bazą produktów.
 
 \subsubsection{Elastic Search}
 
+\hspace{4mm} \textbf{Elasticsearch} to oprogramowanie komputerowe służące do wyszukiwania informacji stworzone przez Shaya Banona z firmy Elastic NV\cite{elastic.def}. Elasticsearch przez pewien czas był całkowicie udostępniany przez darmową licencję open source \emph{Apache 2.0}\footnote{Licencja typu OS z opcjonalnym mechanizmem \emph{copyleft}. Opisana dokładniej w dalszej części pracy.}, jednak począwszy od wersji 7.11 zaczęła być podwójnie licencjonowana za pomocą \emph{Server Side Public License}\footnote{\, Licencja open source z koniecznym zastosowaniem mechanizmu \textbf{copyleft} wprowadzona przez firmę MongoDB Inc\cite{sspl.wiki}. Wymiennie będę stosował terminy: \emph{Server Side Public License, SSPL}} i \emph{Elastic License}\footnote{\, Dedykowana licencja dla programu Elasticsearch. Jej treść znajduje się pod adresem "\emph{https://www.elastic.co/licensing/elastic-license"}\cite{elastic.license}.}. Innymi słowy, dokonując aktualizacji do wersji 7.11 użytkownik może wybrać posługiwanie się programem za pośrednictwem licencji Elastic License lub SSPL\cite{linux.polska}. 
+
+Swoją decyzję producent wyjaśnia chęcią ochrony interesów społeczności OS. Chce tym samym zapobiegać komercyjnemu wykorzystywaniu otwartego kodu źródłowego oprogramowania Elastic przez dostawców chmur publicznych bez zwrotnego wkładu na rzecz ruchu open source\cite{linux.polska}.
+
+Reasumując, jest to przypadek otwartego oprogramowania, które według twórców było nadużywane przez zewnętrzne działalności komercyjne. Aby temu zapobiec licencja Elasticsearch, która nie posiadała koniecznego mechanizmu \emph{copyleft}, została zmieniona na SSPL z obowiązkowym \emph{copyleft} lub firmową Elastic License z odpowiednimi ograniczeniami. To pokazuje, że czasami licencja bez wymaganego zastosowania zabiegu \emph{copyleft} naraża nasze oprogramowanie na wykorzystanie je przez zewnętrzne korporacje wyłącznie dla własnych korzyści. 
+
 \section{Tworzenie projektu open source}
 
-ogólnie że opiszę w tym rozdziale wmi adventure jako open source czy coś takiego, i skąd ten wybór
+\hspace{4mm} W tym rozdziale przedstawię aspekty projektu \textbf{WMI Adventure} w kontekście pojęcia open source. WMI Adventure to projekt inżynierski, który jest otwartym oprogramowaniem. Wspólnie zdecydowaliśmy, że taka forma będzie najbardziej do niego pasować. Aplikacja ma charakter kreatywny, można w niej edytować oraz dodawać do niej nowe elementy, zatem postanowiliśmy iż sam kod źródłowy również będzie otwarty na modyfikacje. Dzięki temu zachęcamy wszystkich użytkowników zarówno do wzbogacania treści programu, jak i rozwijania jego źródła. Co więcej, tematyka produktu obraca się wokół naukowego świata informatyki, więc koncepcja open source, która kojarzy się z programistyczną twórczością oraz ciekawością idealnie się z nim komponuje. Kolejną kwestią jest zapewnienie wszystkim studentom oraz innym użytkownikom dobrego obszaru, gdzie możemy przekonać się jak wygląda prawdziwa współpraca nad rozwojem oprogramowania, co jest nieodłączną częścią kariery każdego programisty. WMI Adventure jest polem doświadczalnym, który może nas lepiej przygotować do przyszłej pracy zespołowej. Forma OS cechuje się również transparentnością, która zapewnia że każdy może sprawdzić projekt pod kątem błędów lub niespójności. Dla nas jako twórców to bardzo cenne, gdyż zależy nam na wzroście jakości produktu, natomiast użytkownikom daje szansę na dołożenie swojego wkładu w projekt, którego rozwijanie będzie dobrą praktyką zawodową.
 
-\subsection{Odpowiednie repozytorium}
+\subsection{Repozytorium open source}
 
-jak powinno wyglądać repo open source na podstawie wmi adventure, plus trochę o licencji wmi adventure - apache
+\hspace{4mm} Miejsce w którym znajduje się kod projektu open source powinno zawierać odpowiednią dokumentację, której w skład wchodzą pliki:
+\begin{itemize}
+    \item Open source license (licencja OS),
+    \item README (plik opisujący projekt),
+    \item CONTRIBUTING (warunki kontrybucji),
+    \item CODE\_OF\_CONDUCT (kodeks postępowania).
+\end{itemize}
+Powyższe komponenty pomagają wyrażać oczekiwania, zarządzać składkami i chronić prawa wszystkich osób (w tym własnych). Znacząco zwiększają szanse na pozytywne doświadczenie. Jeśli kod jest przechowywany w serwisie GitHub, umieszczenie tych plików w katalogu głównym z zalecanymi nazwami pomoże platformie rozpoznać i automatycznie udostępnić je czytelnikom\cite{opensource.guide}.
+
+\subsubsection{Wybór licencji}
+
+\hspace{4mm} Do swojego repozytorium typu open source musisz zamieścić plik z licencją, która gwarantuje, że inni mogą używać, modyfikować oraz wnosić wkład w projekt bez żadnych konsekwencji. Chroni to również przed trudnymi sytuacjami prawnymi\cite{opensource.guide}. 
+
+Podczas tworzenia nowego projektu w GitHub dostępna jest możliwość wybrania licencji. W naszym przypadku jest to licencja \textbf{Apache 2.0}. Apache jest licencją wolnego oprogramowania autorstwa \emph{Apache Software Foundation}. Dopuszcza użycie kodu źródłowego zarówno na potrzeby wolnego oprogramowania, jak i własnościowego oprogramowania. Apache License 2.0, podobnie jak licencje akademickie, zezwala na używanie, modyfikowanie i redystrybucję programu w postaci źródłowej lub binarnej, bez obowiązku udostępnienia kodu źródłowego. Oznacza to, że kod można włączyć do zamkniętych programów, pod warunkiem zachowania zgodności z warunkami licencji. Podobnie jak poprzednie wersje, Apache License 2.0 nie udziela zezwolenia na używanie nazw i znaków handlowych licencjodawcy, z wyjątkiem użycia ich w informacji o pochodzeniu produktu\cite{apache}.
+
+Wybraliśmy tą konkretną licencję, ponieważ należy do najbardziej popularnych oraz polecanych. Spełnia ona wszystkie warunki koncepcji open source oraz ruchu free software, a jednocześnie skutecznie chroni nasze prawa autorskie. Poniższa ilustracja przedstawia jak wygląda licencja załączona do repozytorium "WMIAdventure" (rys. 3).
+\begin{center}
+    \includegraphics[width = 1\textwidth]{licencja.png}
+\end{center}
+
+\subsubsection{Dokument README}
+
+\hspace{4mm} Plik \textbf{README} wyjaśnia jak korzystać z projektu, jakie ma on znaczenie oraz co użytkownicy mogą z nim zrobić. Taki dokument powinien odpowiadać na pytania\cite{opensource.guide}:
+\begin{itemize}
+    \item Co robi projekt?
+    \item Dlaczego ten program jest przydatny?
+    \item Jak zacząć korzystać?
+    \item Gdzie jest możliwość uzyskania dodatkowej pomocy, jeśli jest ona potrzebna?
+\end{itemize}
+
+Przykładowo dokument \textbf{README} WMI Adventure, który jest dostępny pod linkiem \emph{https://github.com/emkarcinos/WMIAdventure/blob/main/README.md}\cite{wmi.readme} składa się z następujących sekcji:
+\begin{enumerate}
+    \item \textbf{Tytuł projektu}, a pod nim krótki opis.
+    \item \textbf{Instalacja i używanie} - informacje o tym jak uruchomić aplikację oraz środowisko deweloperskie\footnote{\, Uruchomienie oprogramowania na swoim serwerze lokalnym wraz z programami ułatwiającymi zarządzanie kodem źródłowym.}.
+    \item \textbf{Użyte technologie} - wymienienie stosowanych zewnętrznych modułów open source.
+    \item \textbf{Wkład w rozwój} - krótka instrukcja z czym się zapoznać, aby włożyć swój wkład w rozwój projektu.
+    \item \textbf{Autorzy} - wymienienie twórców aplikacji.
+    \item \textbf{Licencja} - wskazanie stosowanej licencji OS.
+\end{enumerate}
+
+\subsubsection{Warunki kontrybucji}
+
+\hspace{4mm} Plik \textbf{CONTRIBUTING} opisuje w jaki sposób można rozwijać nasze oprogramowanie OS o kolejne funkcjonalności lub wprowadzać poprawki. Warunki kontrybucji powinny być napisane tak, aby czytelnik, który jest zainteresowany pracą nad projektem uzyskał jak najwięcej wskazówek, które pomogą mu zacząć działać. W przypadku WMI Adventure opisane jest to w następujący sposób:
+\begin{enumerate}
+    \item Krótki opis co należy w pierwszej kolejności zrobić jeśli chcemy przyczynić się do rozwoju aplikacji.
+    \item \textbf{Tworzenie issue} - opis w jaki sposób i w jakim celu tworzyć nowe \emph{issue}\footnote{\, \textbf{Issue} to funkcja serwisu \emph{GitHub}, pozwalająca dyskutować o danym zagadnieniu.}.
+    \item \textbf{Implementacja własnych zmian za pomocą pull request} -\newline przedstawienie wymagań dotyczących kodu wchodzących w skład nowego \emph{pull request}\footnote{\, \textbf{Pull request} to funkcja serwisu \emph{GitHub} pozwalająca zarządzać modyfikacjami kodu, które można zaakceptować lub odrzucić.}, który zawiera zmodyfikowany kod źródłowy.
+    \item \textbf{Wygląd commit'ów} - opis co powinna zawierać treść nazwy \emph{commit'a}\footnote{\, \textbf{Commit} to funkcja oprogramowania \textbf{Git} (rozproszony system kontroli wersji stworzony przez Linus'a Torvalds'a\cite{git.wiki}), która przedstawia modyfikację plików.}.
+    \item \textbf{Wygląd nowego p. r.} - informacja co powinien wyrażać tytuł oraz co napisać w opisie nowego \emph{pull request'a}.
+    \item \textbf{Proces akceptacji p. r.} - wymienienie kroków, które są podejmowane w celu akceptacji \emph{pull request'a}.
+\end{enumerate}
+
+\subsubsection{Kodeks postępowania}
+
+\hspace{4mm} Dokument \textbf{CODE\_OF\_CONDUCT} pomaga ustalić podstawowe zasady postępowania dla uczestników projektu. Jest to szczególnie cenne podczas uruchamiania przedsięwzięcia OS dla społeczności lub firmy. Kodeks postępowania umożliwia autorom zdrowie ograniczając stres oraz konstruktywne zachowanie społeczności\cite{opensource.guide}. Jest możliwość zaadoptowania standardowego kodeksu ze strony pod adresem \emph{"https://www.contributor-covenant.org/"}\cite{contributor.covenant}.
 
 \subsection{Idea społeczna open source}
 
-tak od siebie, czym objawia się wyjątkowość tego projektu, i gdzie w nim ta idea w pełni open source
+\hspace{4mm} WMI Adventure jest projektem, który powstał, aby zacieśnić więzi społeczności wydziału Matematyki i Informatyki Uniwersytetu im. Adama Mickiewicza w Poznaniu. Interakcja z innymi ludźmi to jedna z najcenniejszych wartości koncepcji open source. Cytując pewnego programistę; "\texttt{Jedna z najbardziej wartościowych rzeczy, której doświadczyłem jako kontrybutor open\newline source, to relacje, które zbudowałem rozwiązując problemy razem z\newline innymi programistami}"\cite{kentcdodds}. 
+
+Studia to również dobre środowisko do poznawania nowych osób, poprzez wspólną naukę lub wymianę poglądów. WMI Adventure w pewien sposób ma łączyć społeczne aspekty open source ze studencką integracją. Podczas kształcenia się w środowisku publicznym, napotykamy wiele pojęć oraz sytuacji, które zapadają nam nostalgicznie w pamięć. Poprzez aplikację WMI Adventure dzielimy się tymi przeżyciami, ponieważ polega ona na manipulowaniu treścią wirtualnych kart, które przeznaczone są do pojedynkowania się pomiędzy użytkownikami. Nie tylko kod źródłowy jest open source, ale również sama zawartość oprogramowania, ponieważ może ona być dowolnie dodawana oraz modyfikowana, co zapewnia nieograniczone możliwości.
+
+Aplikacja ma potencjał, aby być dalej rozwijana przez kolejne pokolenia studentów lub innych miłośników informatyki, którzy będą chętni do przekazania swoich własnych naukowych doświadczeń zarówno za pomocą kodu źródłowego jak i treści nawiązujących do informatycznych przygód.
 
 \newpage
 \begin{thebibliography}{99}
 \bibitem{Kotula}
-    Sebastian Dawid Kotuła,
-    \emph{Wstęp do Open Source}
+    Sebastian Dawid Kotuła, \emph{Wstęp do Open Source}
 \bibitem{Richter}
-  Richter Susanne, \emph{Critique for the open source development model,} München 2007.
+  Richter Susanne, \emph{Critique for the open source development model}, München 2007.
 \bibitem{opensource.org}
   \emph{The open source definition (annotated)} [online], [dostęp: 24.11.2021]. Dostępny w WWW: http://www.opensource.org/osd.html.
 \bibitem{wikipedia1}
   \emph{Licencja oprogramowania} [online], [dostęp: 24.11.2021]. Dostępny w WWW: https://pl.wikipedia.org/wiki/Licencja\_oprogramowania.
 \bibitem{wikipedia2}
-  \emph{GNU General Public License} https://pl.wikipedia.org/wiki/GNU\_General\_Public\_License
+  \emph{GNU General Public License} [online], [dostęp: 24.11.2021]. Dostęp: https://pl.wikipedia.org/wiki/GNU\_General\_Public\_License
 \bibitem{wikipedia3}
-  \emph{Licencje BSD} https://pl.wikipedia.org/wiki/Licencje\_BSD
+  \emph{Licencje BSD} [online], [dostęp: 25.11.2021]. Dostęp: https://pl.wikipedia.org/wiki/Licencje\_BSD
 \bibitem{sjp}
   \emph{Znaczenie terminu copyright} [online], [dostęp: 25.11.2021] https://sjp.pwn.pl/slowniki/copyright.html.
 \bibitem{gnu.manifest}
@@ -300,10 +382,66 @@ tak od siebie, czym objawia się wyjątkowość tego projektu, i gdzie w nim ta 
     Chris Dias, \emph{Wyjaśnienie licencjonowania Visual Studio Code w sekcji "issues" na github} [online], [dostęp: 25.12.2021].
     Dostęp: https://github.com/microsoft/vscode/issues/60.    
 \bibitem{vscodium.article}
-    Alan Jones, \emph{Artykuł o VSCodium.} [online], [dostęp: 2.01.2021].
+    Alan Jones, \emph{Artykuł o VSCodium} [online], [dostęp: 2.01.2022].
     Dostęp: https://towardsdatascience.com/what-is-vscodium-and-should-you-be-using-it-926e1369169a.
 \bibitem{vscodium.website}
-    \emph{Strona VSCodium} [online], [dostęp: 2.01.2021].
+    \emph{Strona VSCodium} [online], [dostęp: 2.01.2022].
     Dostęp: https://vscodium.com/.
+\bibitem{cms}
+    Przemysław Durał, \emph{Co to jest CMS?} [online], [dostęp: 2.01.2022].
+    Dostęp: https://ks.pl/slownik/co-to-jest-cms.    
+\bibitem{wordpress.license}
+    \emph{Licencja do systemu WordPress} [online], [dostęp: 2.01.2022].
+    Dostęp: https://wordpress.org/about/license/.      
+\bibitem{wordpress.commercial}
+    \emph{Płatne dodatki do systemu WordPress} [online], [dostęp: 2.01.2022].
+    Dostęp: https://wordpress.org/themes/commercial/.      
+\bibitem{wiki.freeware}
+    \emph{Co to jest "freeware"?} [online], [dostęp: 2.01.2022].
+    Dostęp: https://en.wikipedia.org/wiki/Freeware.    
+\bibitem{opensource.guide}
+    \emph{Rozpoczęcie projektu Open Source} [online], [dostęp: 4.01.2022].
+    Dostęp: https://opensource.guide/pl/starting-a-project/\#co-i-dlaczego-oprogramowania-typu-open-source.
+\bibitem{docker.update}
+    Scott Johnston, \emph{Docker is Updating and Extending Our Product Subscriptions} [online], [dostęp: 4.01.2021].
+    Dostęp: https://www.docker.com/blog/updating-product-subscriptions/.    
+\bibitem{docker.moby}
+    \emph{What is Moby?} [online], [dostęp: 4.01.2022].
+    Dostęp: https://mobyproject.org/.      
+\bibitem{docker.oro}
+    David Oro, \emph{Looking for a Docker Alternative? Consider This} [online], [dostęp: 4.01.2021].
+    Dostęp: https://www.docker.com/blog/looking-for-a-docker-alternative-consider-this/. 
+\bibitem{docker.licensing}
+    \emph{Open source components and licensing} [online], [dostęp: 4.01.2022].
+    Dostęp: https://docker-docs.netlify.app/docker-for-windows/opensource/. 
+\bibitem{apache}
+    \emph{Apache License} [online], [dostęp: 4.01.2022].
+    Dostęp: https://pl.wikipedia.org/wiki/Apache\_License. 
+\bibitem{wmi.readme}
+    \emph{Plik README.md} [online], [dostęp: 4.01.2022].
+    Dostęp: https://github.com/emkarcinos/WMIAdventure/blob/main/README.md. 
+\bibitem{kentcdodds}
+    Kent C. Dodds, \emph{How getting into Open Source has been awesome for me} [online], [dostęp: 5.01.2022]
+    Dostęp: https://kentcdodds.com/blog/how-getting-into-open-source-has-been-awesome-for-me.
+\bibitem{git.wiki}
+    \emph{Git (oprogramowanie)} [online], [dostęp: 6.01.2022]
+    Dostęp: https://pl.wikipedia.org/wiki/Git\_(oprogramowanie).
+\bibitem{contributor.covenant}
+    Coraline Ada Ehmke, \emph{A Code of Conduct for Open Source Communities} [online], [dostęp: 6.01.2022]
+    Dostęp: https://www.contributor-covenant.org/.
+\bibitem{elastic.def}
+    \emph{Open Source Search: The Creators of Elasticsearch, ELK Stack \& Kibana} [online], [dostęp: 6.01.2022]
+    Dostęp: https://www.elastic.co/.
+\bibitem{elastic.license}
+    \emph{Elastic License} [online], [dostęp: 6.01.2022]
+    Dostęp: https://www.elastic.co/licensing/elastic-license.
+\bibitem{sspl.wiki}
+    \emph{Server Side Public License} [online], [dostęp: 6.01.2022]
+    Dostęp: https://en.wikipedia.org/wiki/Server\_Side\_Public\_License.
+\bibitem{linux.polska}
+    Linux Polska, \emph{Zmiany w licencjonowaniu Elasticsearch i Kibana} [online], [dostęp: 6.01.2022]
+    Dostęp: https://linuxpolska.pl/aktualnosci/zmiany-w-licencjonowaniu-elasticsearch-i-kibana/.    
+    
+    
 \end{thebibliography}
 \end{document}
