@@ -33,7 +33,7 @@ Na początku, w latach 60. oraz 70. XX wieku pisanie oprogramowania było domen�
 
 Pomimo komercjalizacji systemów informatycznych, były takie osoby jak Richard Matthew Stallman, których poglądy nie godziły się z koniecznością tworzenia oprogramowania zamkniętego (ang. \emph{closed source} - dostępnego w postaci kodu wykonywalnego). Zdanie Stallmana zostało ukształtowane przede wszystkim przez codzienną rzeczywistość pracy za pomocą urządzeń takich jak drukarka, której oprogramowanie było licencjonowane tak, że nie można było go przeprogramować, dostosowując do własnych potrzeb. „Konsument, nabywając jakiś produkt – taki jak drukarka laserowa – powinien mieć możliwość wykorzystania go w dowolny sposób”\cite{Kotula}. Stanowisko takich ludzi jak Stallman oraz wciąż pojawiająca się potrzeba na istnienie oprogramowania z dostępnym kodem źródłowym, doprowadziło do ukształtowania technologii określanych terminem \emph{open source}\footnote{\, Wymiennie będę stosował terminy: \emph{open source}, \emph{open source software}, \emph{oprogramowanie open source}, \emph{otwarte oprogramowanie} oraz akronimy \emph{OS}, \emph{OSS}.}. Początkowo przyjmowane w sposób niejednoznaczny, dziś zyskują coraz większą popularność i są coraz szerzej wykorzystywane\cite{Kotula}. 
 
-Niniejsza praca poświęcona jest projektom oraz aspektom związanych z \emph{open source}. Praca składa się ze wstępu, bibliografii i trzech zasadniczych części. W pierwszym rozdziale zdefiniuję termin \emph{open source} oraz pojęcia z nim skorelowane, wymienię i opiszę kluczowe rodzaje licencji oraz porównam oprogramowanie otwarte z oprogramowaniem komercyjnym przywołując ich wady i zalety. Następnie wyjaśnię czym jest idea wolnego oprogramowania zwracając uwagę na jej różnice względem ruchu \emph{open source}. Przeanalizuje również kilka konkretnych przykładów otwartego oprogramowania w kontekście wolności i otwartości. W ostatniej części pracy opowiem o tworzeniu aplikacji \emph{open source} na podstawie projektu inżynierskiego \emph{WMI Adventure}. Uzasadnię skąd wybór tego rodzaju licencji, jakie należy załączyć pliki oraz jaką dokumentację sporządzić do repozytorium\footnote{\, Miejsce, w których przechowuje się kod źródłowy oprogramowania.} projektowego. Wreszcie przedstawie ideę \emph{open source} w znaczeniu społecznym odwołując się do naszego projektu inżynierskiego.
+Niniejsza praca poświęcona jest projektom oraz aspektom związanych z \emph{open source}. Praca składa się ze wstępu, bibliografii, trzech zasadniczych części oraz podsumowania. W pierwszym rozdziale zdefiniuję termin \emph{open source} oraz pojęcia z nim skorelowane, wymienię i opiszę kluczowe rodzaje licencji oraz porównam oprogramowanie otwarte z oprogramowaniem komercyjnym przywołując ich wady i zalety. Następnie wyjaśnię czym jest idea wolnego oprogramowania zwracając uwagę na jej różnice względem ruchu \emph{open source}. Przeanalizuje również kilka konkretnych przykładów otwartego oprogramowania w kontekście wolności i otwartości. W ostatniej części pracy opowiem o tworzeniu aplikacji \emph{open source} na podstawie projektu inżynierskiego \emph{WMI Adventure}. Uzasadnię skąd wybór tego rodzaju licencji, jakie należy załączyć pliki oraz jaką dokumentację sporządzić do repozytorium\footnote{\, Miejsce, w których przechowuje się kod źródłowy oprogramowania.} projektowego.
 
 \section{Definicja open source}
 
@@ -113,7 +113,7 @@ Ta część która była udostępniona na licencji \emph{BSD}, na niej pozostaje
 
 \subsection{Porównanie oprogramowania open source z oprogramowaniem komercyjnym}
 
-W tym podrozdziale porównam oprogramowanie \emph{open source} z aplikacjami komercyjnymi (które są jednocześnie oprogramowaniem własnościowym), rozważania będę prowadził na podstawie własnych obserwacji oraz wniosków przedstawionych w książce Sebastiana Dawida Kotuły "Wstęp do Open Source"\cite{Kotula}.
+\hspace{4mm} W tym podrozdziale porównam oprogramowanie \emph{open source} z aplikacjami komercyjnymi (które są jednocześnie oprogramowaniem własnościowym), rozważania będę prowadził na podstawie własnych obserwacji oraz wniosków przedstawionych w książce Sebastiana Dawida Kotuły "Wstęp do Open Source"\cite{Kotula}.
 
 \begin{enumerate}
     \item Pierwszą najbardziej narzucającą się kwestią jest to, iż program typu \emph{open source} posiada otwarty kod. Każdy może zajrzeć co kryje się wewnątrz takiego oprogramowania, natomiast w informatycznych produktach komercyjnych nie mamy dostępu do kodu źródłowego lub jest on zasadniczo utrudniony (np. poprzez zaciemnianie kodu (ang. \emph{obfuscation}\footnote{\, Zaciemnienie kodu polega na jego przekształceniu tak, aby innym trudno było odtworzyć pierwotną strukturę składniową aplikacji\cite{Kotula}}). Programy komercyjne są jak samochody, w których nie możemy zajrzeć co kryje się pod maską. Interesuje nas jedynie to, w jaki sposób realizują zadania, do których są przeznaczone, jednak nie jesteśmy w stanie sprawdzić poziomu oleju w silniku.
@@ -276,7 +276,7 @@ Reasumując, jest to przypadek otwartego oprogramowania, które według twórcó
 
 \section{Tworzenie projektu open source}
 
-\hspace{4mm} W tym rozdziale przedstawię aspekty projektu \textbf{\emph{WMI Adventure}} w kontekście pojęcia \emph{open source}. \emph{WMI Adventure} to projekt inżynierski, który jest otwartym oprogramowaniem. Wspólnie zdecydowaliśmy, że taka forma będzie najbardziej do niego pasować. Aplikacja ma charakter kreatywny, można w niej edytować oraz dodawać do niej nowe elementy, zatem postanowiliśmy iż sam kod źródłowy również będzie otwarty na modyfikacje. Dzięki temu zachęcamy wszystkich użytkowników zarówno do wzbogacania treści programu, jak i rozwijania jego źródła. Co więcej, tematyka produktu obraca się wokół naukowego świata informatyki, więc koncepcja \emph{open source}, która kojarzy się z programistyczną twórczością oraz ciekawością idealnie się z nim komponuje. Kolejną kwestią jest zapewnienie wszystkim studentom oraz innym użytkownikom dobrego obszaru, gdzie możemy przekonać się jak wygląda prawdziwa współpraca nad rozwojem oprogramowania, co jest nieodłączną częścią kariery każdego programisty. \emph{WMI Adventure} jest polem doświadczalnym, który może nas lepiej przygotować do przyszłej pracy zespołowej. Forma \emph{OS} cechuje się również transparentnością, która zapewnia że każdy może sprawdzić projekt pod kątem błędów lub niespójności. Dla nas jako twórców to bardzo cenne, gdyż zależy nam na wzroście jakości produktu, natomiast użytkownikom daje szansę na dołożenie swojego wkładu w projekt, którego rozwijanie będzie dobrą praktyką zawodową.
+\hspace{4mm} W tym rozdziale przedstawię jak powinien być zbudowany projekt typu \emph{open source} na podstawie \textbf{\emph{WMI Adventure}}. \emph{WMI Adventure} to projekt inżynierski, który jest otwartym oprogramowaniem. Wspólnie zdecydowaliśmy, że taka forma będzie najbardziej do niego pasować. Aplikacja ma charakter kreatywny, można w niej edytować oraz dodawać do niej nowe elementy, zatem postanowiliśmy iż sam kod źródłowy również będzie otwarty na modyfikacje. Dzięki temu zachęcamy wszystkich użytkowników zarówno do wzbogacania treści programu, jak i rozwijania jego źródła. Co więcej, tematyka produktu obraca się wokół naukowego świata informatyki, więc koncepcja \emph{open source}, która kojarzy się z programistyczną twórczością oraz ciekawością idealnie się z nim komponuje. Kolejną kwestią jest zapewnienie wszystkim studentom oraz innym użytkownikom dobrego obszaru, gdzie możemy przekonać się jak wygląda prawdziwa współpraca nad rozwojem oprogramowania, co jest nieodłączną częścią kariery każdego programisty. \emph{WMI Adventure} jest polem doświadczalnym, który może nas lepiej przygotować do przyszłej pracy zespołowej. Forma \emph{OS} cechuje się również transparentnością, która zapewnia że każdy może sprawdzić projekt pod kątem błędów lub niespójności. Dla nas jako twórców to bardzo cenne, gdyż zależy nam na wzroście jakości produktu, natomiast użytkownikom daje szansę na dołożenie swojego wkładu w projekt, którego rozwijanie będzie dobrą praktyką zawodową.
 
 \subsection{Repozytorium open source}
 
@@ -289,7 +289,7 @@ Reasumując, jest to przypadek otwartego oprogramowania, które według twórcó
 \end{itemize}
 Powyższe komponenty pomagają wyrażać oczekiwania, zarządzać składkami i chronić prawa wszystkich osób (w tym własnych). Znacząco zwiększają szanse na pozytywne doświadczenie. Jeśli kod jest przechowywany w serwisie \emph{GitHub}, umieszczenie tych plików w katalogu głównym z zalecanymi nazwami pomoże platformie rozpoznać i automatycznie udostępnić je czytelnikom\cite{opensource.guide}.
 
-\subsubsection{Wybór licencji}
+\subsection{Wybór licencji}
 
 \hspace{4mm} Do swojego repozytorium typu \emph{open source} musisz zamieścić plik z licencją, która gwarantuje, że inni mogą używać, modyfikować oraz wnosić wkład w projekt bez żadnych konsekwencji. Chroni to również przed trudnymi sytuacjami prawnymi\cite{opensource.guide}. 
 
@@ -300,7 +300,7 @@ Wybraliśmy tą konkretną licencję, ponieważ należy do najbardziej popularny
     \includegraphics[width = 1\textwidth]{licencja.png}
 \end{center}
 
-\subsubsection{Dokument README}
+\subsection{Dokument README}
 
 \hspace{4mm} Plik \textbf{\emph{README}} wyjaśnia jak korzystać z projektu, jakie ma on znaczenie oraz co użytkownicy mogą z nim zrobić. Taki dokument powinien odpowiadać na pytania\cite{opensource.guide}:
 \begin{itemize}
@@ -320,7 +320,7 @@ Przykładowo dokument \textbf{\emph{README}} \emph{WMI Adventure}, który jest d
     \item \textbf{Licencja} - wskazanie stosowanej licencji \emph{OS}.
 \end{enumerate}
 
-\subsubsection{Warunki kontrybucji}
+\subsection{Warunki kontrybucji}
 
 \hspace{4mm} Plik \textbf{\emph{CONTRIBUTING}} opisuje w jaki sposób można rozwijać nasze oprogramowanie \emph{OS} o kolejne funkcjonalności lub wprowadzać poprawki. Warunki kontrybucji powinny być napisane tak, aby czytelnik, który jest zainteresowany pracą nad projektem uzyskał jak najwięcej wskazówek, które pomogą mu zacząć działać. W przypadku \emph{WMI Adventure} opisane jest to w następujący sposób:
 \begin{enumerate}
@@ -332,13 +332,13 @@ Przykładowo dokument \textbf{\emph{README}} \emph{WMI Adventure}, który jest d
     \item \textbf{Proces akceptacji \emph{p. r.}} - wymienienie kroków, które są podejmowane w celu akceptacji \emph{pull request'a}.
 \end{enumerate}
 
-\subsubsection{Kodeks postępowania}
+\subsection{Kodeks postępowania}
 
 \hspace{4mm} Dokument \textbf{\emph{CODE\_OF\_CONDUCT}} pomaga ustalić podstawowe zasady postępowania dla uczestników projektu. Jest to szczególnie cenne podczas uruchamiania przedsięwzięcia \emph{OS} dla społeczności lub firmy. Kodeks postępowania umożliwia autorom zdrowie ograniczając stres oraz konstruktywne zachowanie społeczności\cite{opensource.guide}. Jest możliwość zaadoptowania standardowego kodeksu ze strony pod adresem \emph{"https://www.contributor-covenant.org/"}\cite{contributor.covenant}.
 
-\subsection{Idea społeczna open source}
+\section{Podsumowanie}
 
-\hspace{4mm} \emph{WMI Adventure} jest projektem, który powstał, aby zacieśnić więzi społeczności wydziału Matematyki i Informatyki Uniwersytetu im. Adama Mickiewicza w Poznaniu. Interakcja z innymi ludźmi to jedna z najcenniejszych wartości koncepcji \emph{open source}. Cytując pewnego programistę; "\texttt{Jedna z najbardziej wartościowych rzeczy, której doświadczyłem jako kontrybutor \emph{open\newline source}, to relacje, które zbudowałem rozwiązując problemy razem z\newline innymi programistami}"\cite{kentcdodds}. 
+\hspace{4mm} \textbf{\emph{WMI Adventure}} jest projektem, który powstał, aby zacieśnić więzi społeczności wydziału Matematyki i Informatyki Uniwersytetu im. Adama Mickiewicza w Poznaniu. Interakcja z innymi ludźmi to jedna z najcenniejszych wartości koncepcji \emph{open source}. Cytując pewnego programistę; "\texttt{Jedna z najbardziej wartościowych rzeczy, której doświadczyłem jako kontrybutor \emph{open\newline source}, to relacje, które zbudowałem rozwiązując problemy razem z\newline innymi programistami}"\cite{kentcdodds}. 
 
 Studia to również dobre środowisko do poznawania nowych osób, poprzez wspólną naukę lub wymianę poglądów. \emph{WMI Adventure} w pewien sposób ma łączyć społeczne aspekty \emph{open source} ze studencką integracją. Podczas kształcenia się w środowisku publicznym, napotykamy wiele pojęć oraz sytuacji, które zapadają nam nostalgicznie w pamięć. Poprzez aplikację \emph{WMI Adventure} dzielimy się tymi przeżyciami, ponieważ polega ona na manipulowaniu treścią wirtualnych kart, które przeznaczone są do pojedynkowania się pomiędzy użytkownikami. Nie tylko kod źródłowy jest \emph{open source}, ale również sama zawartość oprogramowania, ponieważ może ona być dowolnie dodawana oraz modyfikowana, co zapewnia nieograniczone możliwości.
 
